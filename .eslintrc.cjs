@@ -9,5 +9,12 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   plugins: [],
-  rules: {},
+  rules: {
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
+  },
 };
