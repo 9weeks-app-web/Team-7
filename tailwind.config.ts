@@ -8,6 +8,7 @@ export default {
         sans: ["Pretendard"],
       },
       colors: {
+        "primary-white": "#FFFFFF",
         "primary-100": "#0059FF",
         "primary-90": "#196AFF",
         "primary-80": "#337AFF",
@@ -39,6 +40,12 @@ export default {
         "shadow-1": "0px 0px 30px 0px rgba(0, 0, 0, 0.05)",
         "shadow-2": "0px 3px 13px 0px rgba(0, 0, 0, 0.15)",
         "shadow-3": "4px 4px 16px 0px rgba(0, 0, 0, 0.25)",
+      },
+      padding: {
+        "pd-1": "6px",
+        "pd-2": "20px",
+        "pd-3": "30px",
+        "pd-4": "50px",
       },
     },
   },
