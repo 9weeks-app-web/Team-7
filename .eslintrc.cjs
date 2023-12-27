@@ -10,6 +10,7 @@ module.exports = {
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   plugins: [],
   rules: {
+    "@typescript-eslint/no-explicit-any": 0,
     "prettier/prettier": [
       "error",
       {
