@@ -20,4 +20,28 @@
   .caption {
     @apply font-medium text-xs;
   }
+
+  .input-normal {
+    @apply border-neutral-30;
+  }
+
+  .input-waring {
+    @apply border-system-red text-system-red;
+  }
+
+  .input-success {
+    @apply border-system-greem;
+  }
+
+  .input-info-waring {
+    @apply text-system-red text-xs;
+  }
+
+  .input-info-success {
+    @apply text-system-greem text-xs;
+  }
+
+  .input-info-normal {
+    @apply text-neutral-30 text-xs;
+  }
 }

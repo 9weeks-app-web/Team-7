@@ -41,11 +41,11 @@ export default {
         "shadow-2": "0px 3px 13px 0px rgba(0, 0, 0, 0.15)",
         "shadow-3": "4px 4px 16px 0px rgba(0, 0, 0, 0.25)",
       },
-      padding: {
-        "pd-1": "6px",
-        "pd-2": "20px",
-        "pd-3": "30px",
-        "pd-4": "50px",
+      spacing: {
+        "s-1": "6px",
+        "s-2": "20px",
+        "s-3": "30px",
+        "s-4": "50px",
       },
     },
   },
