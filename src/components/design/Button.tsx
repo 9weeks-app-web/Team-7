@@ -1,51 +1,42 @@
-import { MouseEventHandler } from "react";
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
-  label: string;
-  onClick: MouseEventHandler;
-  color: "white" | "gray" | "black" | "blue";
-  width: string;
-  disabled?: boolean;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: string;
+  color?: "black" | "blue";
+  width?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  label,
-  onClick,
+const Button = ({
+  children,
   color,
   width,
-  disabled,
-}) => {
-  let backgroundColor;
-  let textColor;
+  ...props
+}: ButtonProps): JSX.Element => {
+  const selectStyle = (color: ButtonProps["color"]) => {
+    let customStyle: string = "";
 
-  switch (color) {
-    case "white":
-      backgroundColor = "bg-primary-white";
-      textColor = "text-neutral-40";
-      break;
-    case "gray":
-      backgroundColor = "bg-neutral-10";
-      textColor = "text-neutral-40";
-      break;
-    case "black":
-      backgroundColor = "bg-[#333333]";
-      textColor = "text-primary-white";
-      break;
-    case "blue":
-      backgroundColor = "bg-primary-100";
-      textColor = "text-primary-white";
-      break;
-    default:
-      backgroundColor = "bg-white";
-      textColor = "text-neutral-40";
-  }
+    switch (color) {
+      case "black":
+        customStyle = "bg-[#333333] text-primary-white";
+        break;
+      case "blue":
+        customStyle = "bg-primary-100 text-primary-white";
+        break;
+      default:
+        customStyle = "bg-primary-white text-neutral-40 border";
+    }
+
+    return customStyle;
+  };
+
+  const customStyle = selectStyle(color);
+
   return (
     <button
-      onClick={onClick}
-      className={`rounded-md ${width} flex justify-center items-center p-3.5 text-2 ${backgroundColor} ${textColor} disabled:bg-[#E6E6E6] text-[#999999]`}
-      disabled={disabled}
+      className={`h-[52px] rounded-md ${width} flex justify-center items-center p-3.5 text-2 ${customStyle} disabled:bg-[#E6E6E6] text-[#999999]`}
+      {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };
