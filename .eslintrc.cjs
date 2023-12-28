@@ -11,6 +11,8 @@ module.exports = {
   plugins: [],
   rules: {
     "@typescript-eslint/no-explicit-any": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
     "prettier/prettier": [
       "error",
       {
