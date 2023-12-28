@@ -1,8 +1,8 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 @layer components {
   .title {
@@ -19,5 +19,29 @@
 
   .caption {
     @apply font-medium text-xs;
+  }
+
+  .input-normal {
+    @apply border-neutral-30;
+  }
+
+  .input-waring {
+    @apply border-system-red text-system-red;
+  }
+
+  .input-success {
+    @apply border-system-greem;
+  }
+
+  .input-info-waring {
+    @apply text-system-red text-xs;
+  }
+
+  .input-info-success {
+    @apply text-system-greem text-xs;
+  }
+
+  .input-info-normal {
+    @apply text-neutral-30 text-xs;
   }
 }
