@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
 import ListItem from "./ListItem";
 import { OnboardingListItemProps } from "../../types/onboarding";
 import { useEffect, useState } from "react";
+import Button from "../design/Button";
+import { customStyle } from "../../utils/inputUtils";
+import { Link } from "react-router-dom";
 
 const OnboardingForm = () => {
   const dummyData: OnboardingListItemProps[] = [
@@ -80,18 +82,18 @@ const OnboardingForm = () => {
           </h1>
 
           <div className="flex justify-center mb-[20px]">
-            <span className="flex items-center justify-between bg-blue-100 text-blue-500 rounded-full px-[10px] py-[6px] mr-[6px] text-xs">
+            <span className="flex items-center justify-between bg-primary-10 bg-blue-100 text-primary-80 rounded-full px-[10px] py-[6px] mr-[6px] text-xs">
               단계 3/3
             </span>
-            <strong className="font-bold text-[24px]">
+            <strong className="text-[24px] text-neutral-90">
               관심 분야를 선택하세요
             </strong>
           </div>
 
           <div className="flex flex-col justify-center items-center mb-[50px] gap-[20px]">
-            <p>
+            <p className="text-neutral-80">
               관심 분야를 바탕으로 포트폴리오를 추천해 드려요.
-              <span>(최대 3개 선택)</span>
+              <span className="text-primary-100"> (최대 3개 선택)</span>
             </p>
           </div>
         </div>
@@ -118,27 +120,26 @@ const OnboardingForm = () => {
 
         {/* 다음에 설정 or 완료 버튼 */}
         <div className="w-[414px] flex gap-[6px] ml-auto mt-[50px] text-gray-500">
-          <button
-            type="button"
-            className="w-1/3 rounded-[6px] border-[1px] border-gray-300"
-          >
-            <Link to={"/"} className="p-[14px]">
-              다음에 설정
-            </Link>
-          </button>
+          <Link to={"/"}>
+            <Button>다음에 설정</Button>
+          </Link>
 
-          <button
-            type="submit"
-            className={`w-2/3 rounded-[6px] border-[1px] ${
-              isSubmitActive ? "bg-blue-500 text-white" : "bg-gray-300"
-            }`}
-            disabled={isSubmitActive}
-          >
-            {/* TODO:: 회원가입 완료 페이지로 path 변경하기 */}
-            <Link to={"/"} className="p-[14px]">
+          <Link to={"/"} className="flex flex-grow">
+            <Button
+              width="w-[254px]"
+              className={
+                isSubmitActive
+                  ? `${customStyle(
+                      "bg-primary-100 text-primary-white flex-grow border rounded-md"
+                    )}`
+                  : `${customStyle(
+                      "disabled:bg-[#E6E6E6] text-[#999999] flex-grow border rounded-md border-neutral-200 text-2"
+                    )}`
+              }
+            >
               완료
-            </Link>
-          </button>
+            </Button>
+          </Link>
         </div>
       </div>
     </>

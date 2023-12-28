@@ -26,8 +26,8 @@ const ListItem = ({
 
   return (
     <button
-      className={`flex flex-col w-full h-[170px] bg-gray-300 rounded-[6px] overflow-hidden cursor-pointer border-4 ${
-        isSubmitActive ? "border-blue-500" : ""
+      className={`flex flex-col w-full h-[170px] bg-bg-gray-1 rounded-[6px] overflow-hidden cursor-pointer border-4 ${
+        isSubmitActive ? "border-primary-100" : "border-primary-white"
       }`}
       onClick={handleClickItem}
     >
@@ -36,7 +36,7 @@ const ListItem = ({
         alt={altText}
         className="flex-grow"
       />
-      <h3 className="w-full text-black text-left text-[24px] bg-white mt-auto indent-1">
+      <h3 className="w-full text-neutral-90 bg-primary-white text-left text-[24px] mt-auto indent-1">
         {title}
       </h3>
     </button>
