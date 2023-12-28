@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
+import ModalButton from "../components/design/ModalButton";
 
-interface IModalContainerProps {
+interface modalContainerProps {
   children?: JSX.Element | JSX.Element[];
-  title?: string;
+  confrimLabel?: string;
+  cancelLabel?: string;
 }
 
-interface IUseModal {
+interface useModal {
   (callback?: () => void): {
-    Modal: ({ children, title }: IModalContainerProps) => false | JSX.Element;
+    Modal: ({
+      children,
+      confrimLabel,
+      cancelLabel,
+    }: modalContainerProps) => false | JSX.Element;
     openModal: () => void;
     closeModal: () => void;
+    handleConfirm: () => void;
   };
 }
 
-const useModal: IUseModal = (callback) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const useModal: useModal = (callback) => {
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const openModal = () => setIsOpen(true);
 
@@ -25,7 +32,11 @@ const useModal: IUseModal = (callback) => {
     closeModal();
   };
 
-  const Modal = ({ children, title }: IModalContainerProps) => {
+  const Modal = ({
+    children,
+    confrimLabel,
+    cancelLabel,
+  }: modalContainerProps) => {
     useEffect(() => {
       if (isOpen) document.body.style.overflow = "hidden";
 
@@ -37,26 +48,33 @@ const useModal: IUseModal = (callback) => {
     return (
       isOpen && (
         <div
-          className="fixed left-0 top-0 z-[9999] flex h-screen w-screen items-center justify-center bg-black/30"
+          className="fixed left-0 top-0 z-[9999] flex h-screen w-screen items-center justify-center bg-black/50"
           onClick={(event) => {
             if (event.currentTarget === event.target) closeModal();
           }}
           role="presentation"
         >
-          <div className="">
-            <p className="text-center text-n-lg">{title}</p>
-            <div className="py-10">{children}</div>
-            <div className="flex justify-around">
-              {callback && <button onClick={handleConfirm}>확인</button>}
-              <button onClick={closeModal}>취소</button>
-            </div>
+          <div className="w-[384px] rounded-md py-[33px] px-[53px] bg-primary-white shadow-shadow-3 grid gap-s-2">
+            <div className="flex flex-col items-center">{children}</div>
+            {(cancelLabel || confrimLabel) && (
+              <div className="grid grid-cols-2 gap-s-1">
+                {cancelLabel && (
+                  <ModalButton onClick={closeModal}>{cancelLabel}</ModalButton>
+                )}
+                {confrimLabel && callback && (
+                  <ModalButton onClick={handleConfirm} color="blue">
+                    {confrimLabel}
+                  </ModalButton>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )
     );
   };
 
-  return { Modal, openModal, closeModal };
+  return { Modal, openModal, closeModal, handleConfirm };
 };
 
 export default useModal;
