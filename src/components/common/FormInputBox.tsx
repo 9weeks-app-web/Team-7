@@ -32,8 +32,10 @@ const FormInputBox = ({
         currentLength={currentLength}
         {...props}
       />
-      {isError && <ErrorText errorMessage={errorMessage} />}
-      {isSuccess && <SuccessText successMessage={successMessage} />}
+      {isError && errorMessage && <ErrorText errorMessage={errorMessage} />}
+      {isSuccess && successMessage && (
+        <SuccessText successMessage={successMessage} />
+      )}
     </div>
   );
 };
