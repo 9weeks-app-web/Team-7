@@ -42,7 +42,7 @@ const FormInput = ({
             </div>
           </div>
         )}
-        {maxLength && (
+        {maxLength && currentLength && (
           <div className="h-[1.25rem] absolute top-[50%] translate-y-[-50%] right-[16px] text-neutral-30 font-semibold text-sm">
             {currentLength?.length || 0} / {maxLength}
           </div>
