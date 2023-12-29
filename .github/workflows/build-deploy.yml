@@ -6,9 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./client/
     strategy:
       matrix:
         node-version: [16.x]
@@ -28,6 +25,6 @@ jobs:
           username: ${{ secrets.SERVER_NAME }}
           key: ${{ secrets.SSH_PEM_KEY }}
           passphrase: ${{ secrets.SSH_PEM_PASSPHRASE }}
-          source: "client/build/*"
+          source: "client/dist/*"
           strip_components: 1
           target: ${{ secrets.SERVER_PATH }}
