@@ -1,69 +1,83 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SnsJoinForm = () => {
-  return (
-    <div className="max-w-[1200px] m-auto mt-[175px]">
-      <div>
-        <div>
-          <h1 className="flex flex-col justify-center items-center">
-            <img
-              src="/public/logoSfackTitle.svg"
-              alt="SFAC Logo"
-              className="mx-auto mb-[100px]"
-            />
-            <strong className="font-bold text-[24px] pb-[64px]">
-              창작자님 반가워요!
-            </strong>
-          </h1>
-          <button className="bg-yellow-200 w-full mb-[30px] py-[14px] rounded-md">
-            <img src="" alt="카카오 간편로그인" />
-            {/* <p>카카오 간편로그인</p> */}
-          </button>
-          <ul className="flex justify-between gap-[50px] px-[40px] mb-[30px]">
-            <li>
-              <Link to="">
-                <img src="" alt="구글" />
-              </Link>
-            </li>
-            <li>
-              <Link to="">
-                <img src="" alt="네이버" />
-              </Link>
-            </li>
-            <li>
-              <Link to="">
-                <img src="" alt="애플" />
-              </Link>
-            </li>
-            <li>
-              <Link to="">
-                <img src="" alt="페이스북" />
-              </Link>
-            </li>
-          </ul>
-        </div>
+  const navigate = useNavigate();
 
-        <div className="flex justify-between items-center mb-[20px] gap-4 w-full">
+  return (
+    <div className="text-center">
+      <div>
+        <h1 className="flex flex-col gap-s-2 justify-center items-center">
+          <img src="logoSfackTitle.svg" alt="SFAC Logo" className="mx-auto" />
+          <strong className="font-bold text-[24px] pb-s-4">
+            스팩폴리오에서 당신의 꿈을
+            <br /> 더 크고 아름답게 펼쳐보세요.
+          </strong>
+        </h1>
+      </div>
+      <div className="grid gap-[10px] mb-[50px]">
+        <button className="bg-yellow-200 w-full px-s-2 rounded-md h-[52px] relative">
+          <img
+            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
+            src="kakaoCircle.svg"
+            alt="카카오로 시작하기"
+          />
+          카카오로 시작하기
+        </button>
+        <button className="bg-green-500 text-white w-full px-s-2 rounded-md h-[52px] relative">
+          <img
+            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
+            src="naverCircle.svg"
+            alt="네이버로 시작하기"
+          />
+          네이버로 시작하기
+        </button>
+        <button className="bg-white w-full px-s-2 rounded-md h-[52px] border relative">
+          <img
+            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
+            src="googleCircle.svg"
+            alt="구글로 시작하기"
+          />
+          구글로 시작하기
+        </button>
+        <button className="bg-black text-white w-full px-s-2 rounded-md h-[52px] relative">
+          <img
+            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
+            src="appleCircle.svg"
+            alt="Apple로 시작하기"
+          />
+          Apple로 시작하기
+        </button>
+        <button className="bg-blue-500 text-white w-full px-s-2 rounded-md h-[52px] relative">
+          <img
+            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
+            src="facebookCircle.svg"
+            alt="페이스북으로 시작하기"
+          />
+          페이스북으로 시작하기
+        </button>
+        <div className="flex justify-between items-center gap-4 w-full">
           <div className="bg-gray-300 w-2/3 h-[1px]"></div>
           <p className="text-gray-300 text-xs w-1/3">또는</p>
           <div className="bg-gray-300 w-2/3 h-[1px]"></div>
         </div>
-
-        <button className="mb-[50px] w-full py-[14px] rounded-md border border-gray-300">
-          <Link to={"/join/email"}>이메일로 가입하기</Link>
+        <button className="w-full py-[14px] rounded-md border border-gray-300">
+          <Link to={"/signup?type=email&step=1"}>이메일로 가입하기</Link>
         </button>
       </div>
-
       <div>
-        <div className="flex mb-[20px] justify-between text-sm">
-          <p>아직 스팩폴리오 회원이 아니세요?</p>
-          <Link to={"/join/email"} className="underline">
-            회원가입 하기
+        <div className="mt-[50px]">
+          <span className="text-sm">이미 스팩폴리오 회원이신가요?</span>
+          <Link to="/login" className="ml-[40px] text-sm underline">
+            로그인 하기
           </Link>
         </div>
-        <Link to={"/"} className="text-xs text-gray-300">
-          다음에 할래요 X
-        </Link>
+        <button
+          onClick={() => navigate(-1)}
+          className="flex items-center mt-[20px] caption mx-auto"
+        >
+          <span className="text-neutral-40">다음에 할래요</span>
+          <img className="ml-[10px]" alt="close-x" src="/closeX.svg" />
+        </button>
       </div>
     </div>
   );
