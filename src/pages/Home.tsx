@@ -14,6 +14,7 @@ const Home = (): JSX.Element => {
         <Link to="portfolio/today">오늘의 포트폴리오</Link>
         <Link to="portfolio/:id">포트폴리오 상세</Link>
         <Link to="mypage">마이페이지</Link>
+        <Link to="mypage/change-password">비밀번호 변경</Link>
       </div>
     </div>
   );

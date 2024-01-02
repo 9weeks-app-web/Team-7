@@ -7,6 +7,7 @@ import Layout from "./components/layout/Layout";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Signup from "./pages/Signup";
+import ChangePassword from "./pages/ChangePassword";
 
 const App = (): JSX.Element => {
   const isAuthenticated = useSelector(
@@ -60,6 +61,7 @@ const App = (): JSX.Element => {
           <Route path="saved-posts" element={<div>saved-posts</div>} />
           <Route path="posts" element={<div>posts</div>} />
           <Route path="delete" element={<div>delete</div>} />
+          <Route path="change-password" element={<ChangePassword />} />
         </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
