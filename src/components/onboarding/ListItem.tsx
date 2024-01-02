@@ -25,21 +25,23 @@ const ListItem = ({
   };
 
   return (
-    <button
-      className={`flex flex-col w-full h-[170px] bg-bg-gray-1 rounded-[6px] overflow-hidden cursor-pointer border-4 ${
-        isSubmitActive ? "border-primary-100" : "border-primary-white"
-      }`}
-      onClick={handleClickItem}
-    >
-      <img
-        src={isSubmitActive ? selectedImg : imageUrl}
-        alt={altText}
-        className="flex-grow"
-      />
+    <div>
+      <button
+        className={`flex flex-col w-full h-[170px] bg-neutral-10 rounded-[6px] overflow-hidden cursor-pointer border-4 ${
+          isSubmitActive ? "border-primary-100" : "border-white"
+        }`}
+        onClick={handleClickItem}
+      >
+        <img
+          src={isSubmitActive ? selectedImg : imageUrl}
+          alt={altText}
+          className="flex m-auto w-full h-full object-cover"
+        />
+      </button>
       <h3 className="w-full text-neutral-90 bg-primary-white text-left text-[24px] mt-auto indent-1">
         {title}
       </h3>
-    </button>
+    </div>
   );
 };
 
