@@ -69,6 +69,7 @@ const PhoneCertification = ({
         {carrierList.map((item, index) => (
           <PhoneCertificationButton
             key={index}
+            type="button"
             width="w-[66px]"
             onClick={() => handleCarrierClick(item)}
             name={item}
@@ -80,7 +81,7 @@ const PhoneCertification = ({
       </div>
       <div className="flex gap-s-1">
         <FormInput
-          className="w-[282px]"
+          className="!w-[282px]"
           name="phoneNumber"
           placeholder="휴대폰 번호 입력"
           register={register}
@@ -95,6 +96,7 @@ const PhoneCertification = ({
           }}
         />
         <Button
+          type="button"
           width="w-[96px]"
           color={
             isCorrectNumber(watch("phoneNumber")) && currnetSelect !== ""
