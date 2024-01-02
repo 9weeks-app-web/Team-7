@@ -10,7 +10,7 @@ const Auth = (): JSX.Element => {
     <UsersLayout>
       <div className="flex flex-col items-center">
         <Link to="/">
-          <img alt="title-logo-sfac" src="/titleLogoSfac.svg" />
+          <img alt="title-logo-sfac" src="/logoSfacTitle.svg" />
         </Link>
         <h1 className="title flex justify-center mt-[50px]">로그인</h1>
         <AuthForm />

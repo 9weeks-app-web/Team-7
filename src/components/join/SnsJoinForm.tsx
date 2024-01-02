@@ -7,7 +7,7 @@ const SnsJoinForm = () => {
     <div className="text-center">
       <div>
         <h1 className="flex flex-col gap-s-2 justify-center items-center">
-          <img src="logoSfackTitle.svg" alt="SFAC Logo" className="mx-auto" />
+          <img src="/logoSfacTitle.svg" alt="SFAC Logo" className="mx-auto" />
           <strong className="font-bold text-[24px] pb-s-4">
             스팩폴리오에서 당신의 꿈을
             <br /> 더 크고 아름답게 펼쳐보세요.
