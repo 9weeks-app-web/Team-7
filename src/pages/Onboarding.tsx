@@ -1,11 +1,11 @@
-import ListItem from "./ListItem";
-import { OnboardingListItemProps } from "../../types/onboarding";
+import ListItem from "../components/onboarding/ListItem";
+import { OnboardingListItemProps } from "../types/onboarding";
 import { useEffect, useState } from "react";
-import Button from "../design/Button";
-import { customStyle } from "../../utils/inputUtils";
+import Button from "../components/design/Button";
+import { customStyle } from "../utils/inputUtils";
 import { Link } from "react-router-dom";
 
-const OnboardingForm = () => {
+const Onboarding = () => {
   const dummyData: OnboardingListItemProps[] = [
     {
       id: "1",
@@ -110,7 +110,7 @@ const OnboardingForm = () => {
                 imageUrl={item.imageUrl}
                 altText={item.altText}
                 title={item.title}
-                selectedImg="/public/logoSfacTitle.svg" // TODO:: 체크 됐을 떄 이미지 받으면 변경하기
+                selectedImg="/public/checkedThumbnail.svg" // TODO:: 체크 됐을 떄 이미지 받으면 변경하기
                 selectedListItem={handleSelectItem}
                 isSubmitActive={selectedItems.includes(item.title)}
               />
@@ -130,10 +130,10 @@ const OnboardingForm = () => {
               className={
                 isSubmitActive
                   ? `${customStyle(
-                      "bg-primary-100 text-primary-white flex-grow border rounded-md"
+                      "bg-primary-100 text-primary-white flex-grow border rounded-[8px]"
                     )}`
                   : `${customStyle(
-                      "disabled:bg-[#E6E6E6] text-[#999999] flex-grow border rounded-md border-neutral-200 text-2"
+                      "disabled:bg-neutral-10 text-[#999999] flex-grow border rounded-[8px] border-neutral-200 text-2"
                     )}`
               }
             >
@@ -146,4 +146,4 @@ const OnboardingForm = () => {
   );
 };
 
-export default OnboardingForm;
+export default Onboarding;
