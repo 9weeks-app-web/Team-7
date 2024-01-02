@@ -1,32 +1,37 @@
-import { useForm } from "react-hook-form";
-import { useRef, useState } from "react";
 import LogoSfacTitle from "../../public/logoSfacTitle.svg";
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
 import FormInputBox from "../components/common/FormInputBox";
 import Button from "../components/design/Button";
-import PasswordPopup from "../components/password/passwordPopup";
+import { ChangePasswordFormProps } from "../types/changePasswordFormTypes";
+import useModal from "../hooks/useModal";
+import ModalText from "../components/common/ModalText";
+import ModalButton from "../components/design/ModalButton";
+import { Link } from "react-router-dom";
 
-interface ChangePasswordFormValue {
-  password: string;
-  password_confirm: string;
-}
-
-const ChangePasswordForm: React.FC = () => {
-  const [isPopup, setIsPopup] = useState(false);
+const ChangePassword: React.FC = () => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<ChangePasswordFormValue>({ mode: "onBlur" });
+  } = useForm<ChangePasswordFormProps>({ mode: "onBlur" });
+  const { Modal, openModal, closeModal } = useModal(() => {
+    closeModal();
+  });
 
-  const onSubmit = (data: ChangePasswordFormValue) => {
-    setIsPopup(true);
+  const onSubmit = async (data: ChangePasswordFormProps) => {
+    setFormSubmitted(true);
+    openModal();
     console.log(data);
   };
-
   const password = useRef<string | null>(null);
   password.current = watch("password", "");
+
+  const password_confirm = useRef<string | null>(null);
+  password_confirm.current = watch("password_confirm", "");
 
   return (
     <div className="flex items-center flex-col mt-[175px]">
@@ -43,14 +48,10 @@ const ChangePasswordForm: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col justify-center gap-y-5"
         >
+          {/* 새 비밀번호 */}
           <FormInputBox
             register={register}
             options={{
-              minLength: {
-                value: 8,
-                message: `비밀번호 형식이 올바르지 않습니다.
-(영문 대소문자/숫자/특수문자 포함 8자 이상)`,
-              },
               pattern: {
                 value: /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,}$/,
                 message: `비밀번호 형식이 올바르지 않습니다.
@@ -63,7 +64,9 @@ const ChangePasswordForm: React.FC = () => {
             isError={!!errors.password}
             errorMessage={errors.password?.message}
             placeholder="영문 대소문자/숫자/특수문자 포함 8자 이상"
+            minLength={8}
           />
+          {/* 새 비밀번호 확인 */}
           <FormInputBox
             register={register}
             name="password_confirm"
@@ -78,7 +81,13 @@ const ChangePasswordForm: React.FC = () => {
             placeholder="영문 대소문자/숫자/특수문자 포함 8자 이상"
           />
           <div className="flex gap-x-1.5 pt-[1.87rem]">
-            <Button children="다음에 변경" width="w-[7.75rem]" type="button" />
+            <Link to={"/"}>
+              <Button
+                children="다음에 변경"
+                width="w-[7.75rem]"
+                type="button"
+              />
+            </Link>
             <Button
               children="완료"
               color="blue"
@@ -91,16 +100,28 @@ const ChangePasswordForm: React.FC = () => {
                 watch("password") !== watch("password_confirm")
               }
             />
+            {formSubmitted && (
+              <Modal>
+                <div className=" flex flex-col items-center gap-y-[1.25rem]">
+                  <ModalText>비밀번호 변경이 완료되었습니다.</ModalText>
+                  <div className="flex gap-x-[0.375rem]">
+                    <Link to={"/"}>
+                      <ModalButton width="w-[8.5rem]">홈으로 가기</ModalButton>
+                    </Link>
+                    <Link to={"/login"}>
+                      <ModalButton color="blue" width="w-[8.5rem]">
+                        로그인하기
+                      </ModalButton>
+                    </Link>
+                  </div>
+                </div>
+              </Modal>
+            )}
           </div>
         </form>
       </div>
-      {isPopup && (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center z-10">
-          <PasswordPopup />
-        </div>
-      )}
     </div>
   );
 };
 
-export default ChangePasswordForm;
+export default ChangePassword;
