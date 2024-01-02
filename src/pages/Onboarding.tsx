@@ -75,7 +75,7 @@ const Onboarding = () => {
         <div>
           <h1>
             <img
-              src="/public/logoSfackTitle.svg"
+              src="/public/logoSfacTitle.svg"
               alt="SFAC Logo"
               className="mx-auto mb-[20px]"
             />
