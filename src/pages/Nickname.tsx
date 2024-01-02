@@ -3,6 +3,9 @@ import { InputDatas } from "../types/nicknameTypes";
 import NicknameContainer from "../components/nickname/NicknameContainer";
 import NicknameItems from "../components/nickname/NicknameItems";
 import NicknameCheckbox from "../components/nickname/NicknameCheckbox";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { saveData } from "../store/joinSlice";
 
 const Nickname = (): JSX.Element => {
   const {
@@ -11,8 +14,12 @@ const Nickname = (): JSX.Element => {
     formState: { errors, isValid },
   } = useForm<InputDatas>();
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleDataSubmit: SubmitHandler<InputDatas> = (data) => {
-    console.log(data);
+    dispatch(saveData({ userData: data, joinState: { step2: true } }));
+    navigate("/signup?type=email&step=3");
   };
 
   return (
@@ -39,17 +46,17 @@ const Nickname = (): JSX.Element => {
             <NicknameCheckbox
               register={register}
               title="채용제안"
-              target="recruit"
+              target="agreeRecruit"
             />
             <NicknameCheckbox
               register={register}
               title="의견제안"
-              target="opinion"
+              target="agreeOpinion"
             />
             <NicknameCheckbox
               register={register}
               title="프로젝트 제안"
-              target="project"
+              target="agreeProject"
             />
             <button disabled={!isValid}>완료</button>
           </NicknameItems>
