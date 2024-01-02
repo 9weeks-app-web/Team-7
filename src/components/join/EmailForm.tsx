@@ -54,7 +54,7 @@ const EmailForm = () => {
         <EmailFormItems>
           <h1 className=" flex flex-col justify-between items-center">
             <img
-              src="/public/logoSfackTitle.svg"
+              src="/public/logoSfacTitle.svg"
               alt="SFAC Logo"
               className="mx-auto mb-[20px]"
             />

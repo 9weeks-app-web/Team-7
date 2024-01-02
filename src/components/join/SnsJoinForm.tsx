@@ -7,7 +7,7 @@ const SnsJoinForm = () => {
         <div>
           <h1 className="flex flex-col justify-center items-center">
             <img
-              src="/public/logoSfackTitle.svg"
+              src="/public/logoSfacTitle.svg"
               alt="SFAC Logo"
               className="mx-auto mb-[100px]"
             />

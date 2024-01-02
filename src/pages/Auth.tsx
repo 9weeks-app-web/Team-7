@@ -8,7 +8,7 @@ const Auth = (): JSX.Element => {
   return (
     <div className="flex flex-col items-center justify-center h-screen mb-[128px]">
       <Link to="/" className="mt-[175px]">
-        <img alt="title-logo-sfac" src="/titleLogoSfac.svg" />
+        <img alt="title-logo-sfac" src="/logoSfacTitle.svg" />
       </Link>
       <h1 className="title flex justify-center mt-[50px]">로그인</h1>
       <AuthForm />
