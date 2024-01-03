@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Route, Routes, Navigate, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
+import { login } from "./store/authSlice";
 import ProtectedRouter from "./pages/ProtectedRouter";
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
@@ -10,9 +12,18 @@ import Signup from "./pages/Signup";
 import ChangePassword from "./pages/ChangePassword";
 
 const App = (): JSX.Element => {
+  const dispatch = useDispatch();
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      dispatch(login(user));
+    }
+  }, [dispatch]);
 
   return (
     <Routes>
