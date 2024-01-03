@@ -7,4 +7,5 @@ export const ERROR_MESSAGES = {
 (영문 대소문자/숫자/특수문자 포함 8자 이상)`,
   AUTHENTICATION_FAILURE_MESSAGE:
     "가입되어 있지 않은 계정이거나, 이메일 또는 비밀번호가 일치하지 않습니다.",
+  NAME_REQUIRED: "이름을 입력해주세요.",
 };
