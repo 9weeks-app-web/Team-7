@@ -98,7 +98,7 @@ const Onboarding = () => {
         <div>
           <h1>
             <img
-              src="/public/logoSfacTitle.svg"
+              src="/logoSfacTitle.svg"
               alt="SFAC Logo"
               className="mx-auto mb-[20px]"
             />
@@ -133,7 +133,7 @@ const Onboarding = () => {
                 imageUrl={item.imageUrl}
                 altText={item.altText}
                 title={item.title}
-                selectedImg="/public/checkedThumbnail.svg" // TODO:: 체크 됐을 떄 이미지 받으면 변경하기
+                selectedImg="/checkedThumbnail.svg" // TODO:: 체크 됐을 떄 이미지 받으면 변경하기
                 selectedListItem={handleSelectItem}
                 isSubmitActive={selectedItems.includes(item.title)}
               />
