@@ -125,11 +125,11 @@ const AuthForm = (): JSX.Element => {
           <span className="text-2 text-neutral-70 ml-[6px]">로그인 유지</span>
         </div>
         <div>
-          <Link className="text-2 text-neutral-90" to="/">
+          <Link className="text-2 text-neutral-90" to="/find-username">
             아이디 찾기
           </Link>
           <span className="mx-[4px]">|</span>
-          <Link to="/" className="text-2 text-neutral-90">
+          <Link className="text-2 text-neutral-90" to="/find-password">
             비밀번호 찾기
           </Link>
         </div>

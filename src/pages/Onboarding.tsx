@@ -3,49 +3,52 @@ import { OnboardingListItemProps } from "../types/onboarding";
 import { useEffect, useState } from "react";
 import Button from "../components/design/Button";
 import { customStyle } from "../utils/inputUtils";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { saveData } from "../store/joinSlice";
+
+const dummyData: OnboardingListItemProps[] = [
+  {
+    id: "1",
+    imageUrl: "/public/logoSfacKR.svg",
+    altText: "테스트용 이미지1 대체 텍스트",
+    title: "제목1",
+  },
+  {
+    id: "2",
+    imageUrl: "",
+    altText: "이미지2 대체 텍스트",
+    title: "제목2",
+  },
+  {
+    id: "3",
+    imageUrl: "",
+    altText: "이미지3 대체 텍스트",
+    title: "제목3",
+  },
+  {
+    id: "4",
+    imageUrl: "",
+    altText: "이미지4 대체 텍스트",
+    title: "제목4",
+  },
+  {
+    id: "5",
+    imageUrl: "",
+    altText: "이미지5 대체 텍스트",
+    title: "제목5",
+  },
+];
 
 const Onboarding = () => {
-  const dummyData: OnboardingListItemProps[] = [
-    {
-      id: "1",
-      imageUrl: "/public/logoSfacKR.svg",
-      altText: "테스트용 이미지1 대체 텍스트",
-      title: "제목1",
-    },
-    {
-      id: "2",
-      imageUrl: "",
-      altText: "이미지2 대체 텍스트",
-      title: "제목2",
-    },
-    {
-      id: "3",
-      imageUrl: "",
-      altText: "이미지3 대체 텍스트",
-      title: "제목3",
-    },
-    {
-      id: "4",
-      imageUrl: "",
-      altText: "이미지4 대체 텍스트",
-      title: "제목4",
-    },
-    {
-      id: "5",
-      imageUrl: "",
-      altText: "이미지5 대체 텍스트",
-      title: "제목5",
-    },
-  ];
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // 선택한 아이템 배열
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
-  console.log("선택된 아이템 배열: ", selectedItems);
 
   // 선택 된 아이템과 아닌 아이템 여부
   const [isSubmitActive, setIsSubmitActive] = useState<boolean>(false);
-  console.log("isSubmitActive의 상태: ", isSubmitActive);
 
   const handleSelectItem = (title: string) => {
     if (selectedItems.includes(title)) {
@@ -59,6 +62,26 @@ const Onboarding = () => {
     }
 
     setIsSubmitActive(!isSubmitActive);
+  };
+
+  const handleClickDone = () => {
+    dispatch(
+      saveData({
+        userData: { onboarding: selectedItems },
+        joinState: { step3: true },
+      })
+    );
+    navigate("/signup?type=email&step=4");
+  };
+
+  const handleClickLater = () => {
+    dispatch(
+      saveData({
+        userData: { onboarding: [] },
+        joinState: { step3: true },
+      })
+    );
+    navigate("/signup?type=email&step=4");
   };
 
   useEffect(() => {
@@ -120,26 +143,24 @@ const Onboarding = () => {
 
         {/* 다음에 설정 or 완료 버튼 */}
         <div className="w-[414px] flex gap-[6px] ml-auto mt-[50px] text-gray-500">
-          <Link to={"/"}>
-            <Button>다음에 설정</Button>
-          </Link>
+          <Button onClick={handleClickLater}>다음에 설정</Button>
 
-          <Link to={"/"} className="flex flex-grow">
-            <Button
-              width="w-[254px]"
-              className={
-                isSubmitActive
-                  ? `${customStyle(
-                      "bg-primary-100 text-primary-white flex-grow border rounded-[8px]"
-                    )}`
-                  : `${customStyle(
-                      "disabled:bg-neutral-10 text-[#999999] flex-grow border rounded-[8px] border-neutral-200 text-2"
-                    )}`
-              }
-            >
-              완료
-            </Button>
-          </Link>
+          <Button
+            width="w-[254px]"
+            onClick={handleClickDone}
+            disabled={!isSubmitActive}
+            className={
+              isSubmitActive
+                ? `${customStyle(
+                    "bg-primary-100 text-primary-white flex-grow border rounded-[8px]"
+                  )}`
+                : `${customStyle(
+                    "disabled:bg-neutral-10 text-[#999999] flex-grow border rounded-[8px] border-neutral-200 text-2"
+                  )}`
+            }
+          >
+            완료
+          </Button>
         </div>
       </div>
     </>
