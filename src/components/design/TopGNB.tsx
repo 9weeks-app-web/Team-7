@@ -1,9 +1,8 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import TopGNBTab from "../common/TopGNBTab";
 
 const TopGNB = (): JSX.Element => {
   const { pathname } = useLocation();
-
-  console.log(pathname);
 
   return (
     <nav className="fixed top-0 left-0 h-[96px] bg-white shadow-shadow-1 w-full z-10">
@@ -65,31 +64,6 @@ const TopGNB = (): JSX.Element => {
         </div>
       </div>
     </nav>
-  );
-};
-
-interface topGNBTabProps {
-  children: string;
-  isSelected: boolean;
-  to: string;
-}
-
-const TopGNBTab = ({
-  children,
-  isSelected,
-  to,
-}: topGNBTabProps): JSX.Element => {
-  const navigate = useNavigate();
-
-  return (
-    <div
-      className={`w-[96px] flex items-center justify-center cursor-pointer${
-        isSelected ? " border-b-2 border-primary-90" : ""
-      }`}
-      onClick={() => navigate(to)}
-    >
-      {children}
-    </div>
   );
 };
 
