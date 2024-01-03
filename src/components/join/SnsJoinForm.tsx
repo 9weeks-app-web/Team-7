@@ -15,42 +15,42 @@ const SnsJoinForm = () => {
         </h1>
       </div>
       <div className="grid gap-[10px] mb-[50px]">
-        <button className="bg-yellow-200 w-full px-s-2 rounded-md h-[52px] relative">
+        <button className="bg-[#FEE500] w-full px-s-2 rounded-md h-[52px] relative">
           <img
-            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
-            src="kakaoCircle.svg"
+            className="absolute top-1/2 -translate-y-1/2"
+            src="kakaoIcon.svg"
             alt="카카오로 시작하기"
           />
           카카오로 시작하기
         </button>
-        <button className="bg-green-500 text-white w-full px-s-2 rounded-md h-[52px] relative">
+        <button className="bg-[#03C75A] text-white w-full px-s-2 rounded-md h-[52px] relative">
           <img
-            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
-            src="naverCircle.svg"
+            className="absolute top-1/2 -translate-y-1/2"
+            src="naverIcon.svg"
             alt="네이버로 시작하기"
           />
           네이버로 시작하기
         </button>
         <button className="bg-white w-full px-s-2 rounded-md h-[52px] border relative">
           <img
-            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
-            src="googleCircle.svg"
+            className="absolute top-1/2 -translate-y-1/2"
+            src="googleIcon.svg"
             alt="구글로 시작하기"
           />
           구글로 시작하기
         </button>
-        <button className="bg-black text-white w-full px-s-2 rounded-md h-[52px] relative">
+        <button className="bg-[#1A1A1A] text-white w-full px-s-2 rounded-md h-[52px] relative">
           <img
-            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
-            src="appleCircle.svg"
+            className="absolute top-1/2 -translate-y-1/2"
+            src="appleIcon.svg"
             alt="Apple로 시작하기"
           />
           Apple로 시작하기
         </button>
-        <button className="bg-blue-500 text-white w-full px-s-2 rounded-md h-[52px] relative">
+        <button className="bg-[#1877F2] text-white w-full px-s-2 rounded-md h-[52px] relative">
           <img
-            className="w-[36px] h-[36px] absolute top-1/2 -translate-y-1/2"
-            src="facebookCircle.svg"
+            className="absolute top-1/2 -translate-y-1/2"
+            src="facebookIcon.svg"
             alt="페이스북으로 시작하기"
           />
           페이스북으로 시작하기
