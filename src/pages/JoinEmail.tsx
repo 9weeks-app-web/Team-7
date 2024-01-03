@@ -8,6 +8,9 @@ import { isError } from "../utils/inputUtils";
 import FormInputBox from "../components/common/FormInputBox";
 import Button from "../components/design/Button";
 import PhoneCertification from "../components/common/PhoneCertification";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { saveData } from "../store/joinSlice";
 
 const JoinEmail = () => {
   const {
@@ -17,6 +20,9 @@ const JoinEmail = () => {
     formState: { errors, isValid },
     clearErrors,
   } = useForm<JoinFormValue>({ mode: "onChange" });
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // 인풋의 상태 확인
   const usernameRef = useRef<string | null>(null);
@@ -50,9 +56,9 @@ const JoinEmail = () => {
     agreeServiceTerms;
 
   const handleDataSubmit: SubmitHandler<JoinFormValue> = (data) => {
-    console.log("다음 버튼 클릭 후 data: ", data);
+    dispatch(saveData({ userData: data, joinState: { step1: true } }));
+    navigate("/signup?type=email&step=2");
   };
-  console.log(allCheckboxesChecked);
 
   return (
     <div className="max-w-[1200px] m-auto py-[175px]">
@@ -60,7 +66,7 @@ const JoinEmail = () => {
         <EmailFormItems>
           <h1 className="flex flex-col justify-between items-center mb-[50px]">
             <img
-              src="/public/logoSfackTitle.svg"
+              src="/logoSfacTitle.svg"
               alt="SFAC Logo"
               className="mx-auto mb-[20px]"
             />
@@ -180,13 +186,15 @@ const JoinEmail = () => {
           </div>
 
           {/* 휴대폰 인증 */}
-          <PhoneCertification
-            register={register}
-            watch={watch}
-            errors={errors}
-            clearErrors={clearErrors}
-            certificationNumber={"555555"}
-          />
+          <div className="w-full">
+            <PhoneCertification
+              register={register}
+              watch={watch}
+              errors={errors}
+              clearErrors={clearErrors}
+              certificationNumber={"555555"}
+            />
+          </div>
 
           {/* 본인인증 동의서 */}
           <EmailFormItems className="mt-[20px] mb-[50px]">
@@ -223,11 +231,7 @@ const JoinEmail = () => {
 
           {/* 회원가입 완료 페이지로 이동 */}
           <div className="w-full flex gap-[6px] text-gray-500">
-            <Button
-              disabled={isValid}
-              onClick={() => console.log("이전으로", isValid)} // navigation 해서 이전 페이지로 이동 시키기
-              width="w-[96px]"
-            >
+            <Button type="button" onClick={() => navigate(-1)} width="w-[96px]">
               이전
             </Button>
 

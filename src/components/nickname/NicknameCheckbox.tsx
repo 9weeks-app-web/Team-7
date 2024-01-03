@@ -6,9 +6,9 @@ const NicknameCheckbox = ({
   register,
 }: NicknameCheckboxProps): JSX.Element => {
   return (
-    <div>
-      <label htmlFor={target}>{title}</label>
+    <div className="flex gap-s-1">
       <input id={target} type="checkbox" {...register(target)} />
+      <label htmlFor={target}>{title}</label>
     </div>
   );
 };

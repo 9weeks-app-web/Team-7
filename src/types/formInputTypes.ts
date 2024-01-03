@@ -2,7 +2,7 @@ import { InputHTMLAttributes } from "react";
 import { FieldValues, RegisterOptions, UseFormRegister } from "react-hook-form";
 
 export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FieldValues | any>;
   name: string;
   isError?: boolean;
   isVisible?: boolean;
@@ -12,7 +12,7 @@ export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export interface formInputBoxProps
   extends InputHTMLAttributes<HTMLInputElement> {
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FieldValues | any>;
   options?: RegisterOptions<FieldValues, string> | undefined;
   name: string;
   title: string;

@@ -1,10 +1,11 @@
 import SnsJoinForm from "../components/join/SnsJoinForm";
+import UsersLayout from "../components/layout/UsersLayout";
 
 const Join = () => {
   return (
-    <div className="flex flex-col w-[384px] mx-auto items-center text-center">
+    <UsersLayout>
       <SnsJoinForm />
-    </div>
+    </UsersLayout>
   );
 };
 
