@@ -9,7 +9,7 @@ import FormInputBox from "../common/FormInputBox";
 import ErrorText from "../common/ErrorText";
 import { InputDatas } from "../../types/loginTypes";
 import { isError } from "../../utils/inputUtils";
-import { MOCK_USERS } from "../../mocks/mockUser";
+import { MOCK_LOGIN_USERS } from "../../mocks/mockUser";
 import { ERROR_MESSAGES } from "../../constants/errorMessages";
 import { PATTERNS } from "../../constants/patterns";
 
@@ -30,7 +30,7 @@ const AuthForm = (): JSX.Element => {
   ) => {
     try {
       // TODO: login api 연동
-      const user = MOCK_USERS.find(
+      const user = MOCK_LOGIN_USERS.find(
         (user) => user.email === data.email && user.password === data.password
       );
 
