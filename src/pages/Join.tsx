@@ -1,11 +1,15 @@
+import TopGNB from "../components/design/TopGNB";
 import SnsJoinForm from "../components/join/SnsJoinForm";
 import UsersLayout from "../components/layout/UsersLayout";
 
 const Join = () => {
   return (
-    <UsersLayout>
-      <SnsJoinForm />
-    </UsersLayout>
+    <>
+      <TopGNB />
+      <UsersLayout>
+        <SnsJoinForm />
+      </UsersLayout>
+    </>
   );
 };
 
