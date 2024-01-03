@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
+import FindPassword from "./pages/FindPassword";
 import { RootState } from "./store";
 
 const App = (): JSX.Element => {
@@ -19,6 +20,7 @@ const App = (): JSX.Element => {
           path="login"
           element={isAuthenticated ? <Navigate to="/" /> : <Auth />}
         />
+        <Route path="find-password" element={<FindPassword />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
