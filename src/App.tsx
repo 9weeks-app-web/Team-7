@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Route, Routes, Navigate, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./store";
+import { login } from "./store/authSlice";
 import ProtectedRouter from "./pages/ProtectedRouter";
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
@@ -8,11 +10,21 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Signup from "./pages/Signup";
 import ChangePassword from "./pages/ChangePassword";
+import FindPassword from "./pages/FindPassword";
 
 const App = (): JSX.Element => {
+  const dispatch = useDispatch();
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated
   );
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      dispatch(login(user));
+    }
+  }, [dispatch]);
 
   return (
     <Routes>
@@ -22,7 +34,7 @@ const App = (): JSX.Element => {
           <Route path="login" element={<Auth />} />
           <Route path="signup" element={<Signup />} />
           <Route path="find-username" element={<div>find-username</div>} />
-          <Route path="find-password" element={<div>find-password</div>} />
+          <Route path="find-password" element={<FindPassword />} />
         </Route>
       </Route>
       <Route path="/portfolio" element={<Outlet />}>

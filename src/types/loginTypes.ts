@@ -7,9 +7,15 @@ export interface LoginUser {
   password: string;
 }
 
+export interface PasswordRecoveryUser {
+  name: string;
+  email: string;
+  phoneNumber: string;
+}
+
 export interface AuthState {
   isAuthenticated: boolean;
-  user: LoginUser | null;
+  user: LoginUser | PasswordRecoveryUser | null;
 }
 
 export interface LoginErrorMessageProps {

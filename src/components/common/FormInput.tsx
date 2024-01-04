@@ -35,9 +35,9 @@ const FormInput = ({
               }
             >
               {isShow ? (
-                <img src="./hide.svg" alt="show/hide" />
+                <img src="/hide.svg" alt="show/hide" />
               ) : (
-                <img src="./show.svg" alt="show/hide" />
+                <img src="/show.svg" alt="show/hide" />
               )}
             </div>
           </div>
