@@ -21,7 +21,7 @@ interface useModal {
 }
 
 const useModal: useModal = (callback) => {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openModal = () => setIsOpen(true);
 
