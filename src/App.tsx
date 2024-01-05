@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Signup from "./pages/Signup";
 import ChangePassword from "./pages/ChangePassword";
+import FindUsername from "./pages/FindUsername";
 import FindPassword from "./pages/FindPassword";
 
 const App = (): JSX.Element => {
@@ -33,7 +34,7 @@ const App = (): JSX.Element => {
         <Route element={isAuthenticated ? <Navigate to="/" /> : <Outlet />}>
           <Route path="login" element={<Auth />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="find-username" element={<div>find-username</div>} />
+          <Route path="find-username" element={<FindUsername />} />
           <Route path="find-password" element={<FindPassword />} />
         </Route>
       </Route>

@@ -1,18 +1,18 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { authenticateUser } from "../../store/authSlice";
+import { authenticateUser } from "../../../store/authSlice";
 
-import FormInputBox from "../common/FormInputBox";
-import PhoneCertification from "../common/PhoneCertification";
-import Button from "../design/Button";
-import useModal from "../../hooks/useModal";
+import FormInputBox from "../../common/FormInputBox";
+import PhoneCertification from "../../common/PhoneCertification";
+import Button from "../../design/Button";
+import useModal from "../../../hooks/useModal";
 
-import { FindPasswordInputs } from "../../types/passwordTypes";
-import { isError } from "../../utils/inputUtils";
-import { PATTERNS } from "../../constants/patterns";
-import { ERROR_MESSAGES } from "../../constants/errorMessages";
-import { MOCK_PASSWORD_RECOVERY_USERS } from "../../mocks/mockUser";
+import { FindPasswordInputs } from "../../../types/findTypes";
+import { isError } from "../../../utils/inputUtils";
+import { PATTERNS } from "../../../constants/patterns";
+import { ERROR_MESSAGES } from "../../../constants/errorMessages";
+import { MOCK_RECOVERY_USERS } from "../../../mocks/mockUser";
 
 const FindPasswordForm = (): JSX.Element => {
   const {
@@ -37,7 +37,7 @@ const FindPasswordForm = (): JSX.Element => {
   ) => {
     try {
       // TODO: 가입된 사용자 검증 api 연동
-      const user = MOCK_PASSWORD_RECOVERY_USERS.find(
+      const user = MOCK_RECOVERY_USERS.find(
         (user) =>
           user.name === data.name &&
           user.email === data.email &&
