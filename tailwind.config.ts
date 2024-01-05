@@ -43,6 +43,8 @@ export default {
         "shadow-1": "0px 0px 30px 0px rgba(0, 0, 0, 0.05)",
         "shadow-2": "0px 3px 13px 0px rgba(0, 0, 0, 0.15)",
         "shadow-3": "4px 4px 16px 0px rgba(0, 0, 0, 0.25)",
+        "shadow-4":
+          "8px 17px 13px -15px rgba(0, 0, 0, 0.15), 8px -17px 13px -15px rgba(0, 0, 0, 0.07), 15px 0px 13px -10px rgba(0, 0, 0, 0.07)",
       },
       spacing: {
         "s-1": "6px",
