@@ -56,7 +56,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
           />
           <span className="text_1 text-md text-neutral-90">{userName}</span>
         </div>
-        <div className="flex pl-1.5 pr-1.5 gap-x-2.5 text-2 text-sm text-neutral-50">
+        <div className="flex pl-1.5 pr-1.5 gap-x-2.5 text-3 text-sm text-neutral-50">
           <div className="flex gap-x-[0.1875rem]">
             <img src="./heart.svg" alt="heart" />
             <span>{formatNumber(like)}</span>
