@@ -1,6 +1,6 @@
 import { MOCK_PORTFOLIO } from "../../mocks/mockPortfolio.ts";
 import { PortfolioBoxProps } from "../../types/portfolioBoxTypes.ts";
-import PortfolioBox from "./portfolioBox.tsx";
+import PortfolioBox from "./PortfolioBox.tsx";
 
 const PortfolioList: React.FC = () => {
   const portfolioData: PortfolioBoxProps[] = MOCK_PORTFOLIO;
