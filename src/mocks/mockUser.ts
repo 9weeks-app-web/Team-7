@@ -1,5 +1,5 @@
 import { LoginUser } from "../types/loginTypes";
-import { RecoveryUser } from "../types/passwordTypes";
+import { RecoveryUser } from "../types/findTypes";
 
 export const MOCK_LOGIN_USERS: LoginUser[] = [
   { email: "admin@sfacfolio.com", password: "sfacfolio7!" },

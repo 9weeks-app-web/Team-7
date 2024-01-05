@@ -11,7 +11,7 @@ import useModal from "../hooks/useModal";
 import ModalText from "../components/common/ModalText";
 import ModalButton from "../components/design/ModalButton";
 
-import { ChangePasswordFormProps } from "../types/changePasswordFormTypes";
+import { ChangePasswordFormProps } from "../types/findTypes";
 import { ERROR_MESSAGES } from "./../constants/errorMessages";
 import { PATTERNS } from "./../constants/patterns";
 
