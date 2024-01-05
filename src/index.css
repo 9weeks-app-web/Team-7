@@ -17,6 +17,10 @@
     @apply font-bold text-sm;
   }
 
+  .text-3 {
+    @apply font-semibold text-sm;
+  }
+
   .caption {
     @apply font-medium text-xs;
   }
