@@ -6,6 +6,8 @@ export const SliderContainer = styled.div`
 `;
 
 export const StyledSlider = styled(Slider)`
+  display: flex;
+
   .slick-prev::before,
   .slick-next::before {
     content: none;

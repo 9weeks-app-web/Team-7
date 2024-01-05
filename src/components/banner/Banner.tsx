@@ -22,11 +22,7 @@ const Banner = (): JSX.Element => {
   return (
     <SliderContainer className="w-[1200px] mx-auto">
       <div>
-        <StyledSlider
-          {...settings}
-          className="swiper"
-          style={{ display: "flex" }}
-        >
+        <StyledSlider {...settings} className="swiper">
           {banners.map((item) => (
             <Slider key={item.id}>
               <div>
