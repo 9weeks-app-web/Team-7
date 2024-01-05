@@ -14,7 +14,7 @@
   }
 
   .text-2 {
-    @apply font-bold text-sm;
+    @apply font-semibold text-sm;
   }
 
   .caption {
