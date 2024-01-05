@@ -5,7 +5,7 @@ const TopGNB = (): JSX.Element => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 h-[96px] bg-white shadow-shadow-1 w-full z-10">
+    <nav className="fixed top-0 left-0 h-[96px] bg-white shadow-shadow-1 w-full z-[100000]">
       <div className="grid gap-s-1">
         <div className="h-[40px] bg-[#F3F3F3]">
           <div className="max-w-[1200px] mx-auto flex h-full">
@@ -48,8 +48,11 @@ const TopGNB = (): JSX.Element => {
                   <img src="/search.svg" alt="search" />
                 </div>
               </div>
-              <div className="flex items-center gap-[22px]">
-                <Link to={"/login"} className="text-xs font-semibold">
+              <div className="flex items-center">
+                <Link
+                  to={"/login"}
+                  className="text-xs font-semibold w-[80px] text-center"
+                >
                   로그인
                 </Link>
                 <Link
