@@ -34,7 +34,7 @@
   }
 
   .input-success {
-    @apply border-system-greem;
+    @apply border-system-green;
   }
 
   .input-info-waring {
@@ -42,7 +42,7 @@
   }
 
   .input-info-success {
-    @apply text-system-greem text-xs;
+    @apply text-system-green text-xs;
   }
 
   .input-info-normal {

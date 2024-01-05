@@ -71,7 +71,7 @@ const ChangePassword = (): JSX.Element => {
       <div className="flex justify-center flex-col items-center">
         <p className="text-2xl font-semibold mt-[20px]">비밀번호 변경하기</p>
         {isRedirectedFromFindPassword && (
-          <div className="mt-[50px] text-system-greem text-1">
+          <div className="mt-[50px] text-system-green text-1">
             <div className="text-center">입력하신 정보와 일치합니다.</div>
             <div> 새로운 비밀번호를 입력해주세요!</div>
           </div>
