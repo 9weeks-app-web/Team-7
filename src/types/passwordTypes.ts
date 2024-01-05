@@ -1,8 +1,7 @@
 export interface FindPasswordInputs {
   [index: string]: string;
 }
-
-export interface PasswordRecoveryUser {
+export interface RecoveryUser {
   name: string;
   email: string;
   phoneNumber: string;
