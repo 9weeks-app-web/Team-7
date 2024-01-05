@@ -6,11 +6,7 @@ const JoinComplete = () => {
   return (
     <UsersLayout>
       <div className="mx-auto text-center text-neutral-90">
-        <img
-          src=""
-          alt=""
-          className="w-full h-[260px] bg-neutral-10 mb-[20px]"
-        />
+        <img src="/joinComplete.png" alt="" className="w-full h-[260px]" />
         <h2 className="mb-[6px] text-[24px] font-semibold">
           회원가입이 완료되었습니다! 👋🏻
         </h2>
