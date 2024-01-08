@@ -4,7 +4,7 @@ import PortfolioList from "../components/portfolio/PortfolioList";
 import SuccessfulPortfolio from "../components/successfulPortfolio/SuccessfulPortfolio";
 import ProfessionalList from "../components/professional/ProfessionalList";
 import RecomendCreator from "../components/recommendCreator/RecommendCreator";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import FilterPopup from "../components/filterPopup/FilterPopup";
 import FilterButton from "../components/home/FilterButton";
@@ -45,9 +45,12 @@ const Home = (): JSX.Element => {
                 <p className="text-primary-80 text-2xl mb-s-2">
                   SPECFOLIO에서 최고의 아이디어 탐색하기
                 </p>
-                <button className="text-primary-80 text-xl bg-[rgb(207,222,252)] py-s-2 px-s-3 rounded-full">
+                <Link
+                  to={"/portfolio"}
+                  className="text-primary-80 text-xl bg-[rgb(207,222,252)] py-s-2 px-s-3 rounded-full"
+                >
                   포트폴리오 더 보기
-                </button>
+                </Link>
               </div>
             </div>
           </div>
