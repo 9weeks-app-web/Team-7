@@ -9,7 +9,7 @@ const FilterPopup = (): JSX.Element => {
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category");
   const sub = searchParams.get("sub");
-  const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(true);
+  const [isCategoryOpen, setIsCategoryOpen] = useState<boolean>(false);
   const [isSortOpen, setIsSortOpen] = useState<boolean>(false);
   const [isServiceOpen, setIsServieOpen] = useState<boolean>(false);
   const [seletectedCategory, setSelectedCategory] = useState<string>(
@@ -71,7 +71,7 @@ const FilterPopup = (): JSX.Element => {
   }, []);
 
   return (
-    <div className={`inline-block`}>
+    <div className={`inline-block${isMenuHeight ? " shadow-shadow-2" : ""}`}>
       <div className="flex">
         <div
           className={`w-[240px]${

@@ -27,7 +27,9 @@ const PopupCategory = forwardRef(
     return (
       <div
         className={`pl-[15px] py-s-2 pr-[25.5px] bg-white${
-          !isMenuHeight ? " border rounded-r-md rounded-b-md" : " rounded-tr-md"
+          !isMenuHeight
+            ? " border rounded-r-md rounded-b-md shadow-shadow-4"
+            : " rounded-tr-md"
         }`}
         ref={ref}
       >

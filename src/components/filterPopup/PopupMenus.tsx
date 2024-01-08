@@ -27,7 +27,7 @@ const PopupMenus = forwardRef(
       <div
         className={`grid gap-s-1 p-s-1 bg-white${
           !isMenuHeight
-            ? " border-b border-l border-t rounded-l-md"
+            ? " border-b border-l border-t rounded-l-md shadow-shadow-2"
             : isCategoryOpen
               ? " rounded-l-md"
               : " rounded-md"
