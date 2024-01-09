@@ -15,6 +15,7 @@ import FindPassword from "./pages/FindPassword";
 import Portfolio from "./pages/Portfolio";
 import Community from "./pages/Community";
 import Projects from "./pages/Projects";
+import PortfolioDetail from "./pages/PortfolioDetail";
 
 const App = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -47,8 +48,8 @@ const App = (): JSX.Element => {
           <Route path="create" element={<div>create</div>} />
         </Route>
         <Route path="today" element={<div>today</div>} />
-        <Route path=":id" element={<div>detail</div>} />
       </Route>
+      <Route path="/portfolio/:id" element={<PortfolioDetail />} />
       <Route path="/community" element={<Layout />}>
         <Route index element={<Community />} />
         <Route element={<ProtectedRouter />}>
