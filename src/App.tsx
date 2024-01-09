@@ -12,6 +12,9 @@ import Signup from "./pages/Signup";
 import ChangePassword from "./pages/ChangePassword";
 import FindUsername from "./pages/FindUsername";
 import FindPassword from "./pages/FindPassword";
+import Portfolio from "./pages/Portfolio";
+import Community from "./pages/Community";
+import Projects from "./pages/Projects";
 
 const App = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -38,16 +41,16 @@ const App = (): JSX.Element => {
           <Route path="find-password" element={<FindPassword />} />
         </Route>
       </Route>
-      <Route path="/portfolio" element={<Outlet />}>
-        <Route index element={<div>portfolio</div>} />
+      <Route path="/portfolio" element={<Layout />}>
+        <Route index element={<Portfolio />} />
         <Route element={<ProtectedRouter />}>
           <Route path="create" element={<div>create</div>} />
         </Route>
         <Route path="today" element={<div>today</div>} />
         <Route path=":id" element={<div>detail</div>} />
       </Route>
-      <Route path="/community" element={<Outlet />}>
-        <Route index element={<div>community</div>} />
+      <Route path="/community" element={<Layout />}>
+        <Route index element={<Community />} />
         <Route element={<ProtectedRouter />}>
           <Route path="create" element={<div>create</div>} />
         </Route>
@@ -56,15 +59,15 @@ const App = (): JSX.Element => {
         <Route path="free" element={<div>free</div>} />
         <Route path=":id" element={<div>detail</div>} />
       </Route>
-      <Route path="/projects" element={<Outlet />}>
-        <Route index element={<div>projects</div>} />
+      <Route path="/projects" element={<Layout />}>
+        <Route index element={<Projects />} />
         <Route element={<ProtectedRouter />}>
           <Route path="create" element={<div>create</div>} />
         </Route>
         <Route path="today" element={<div>today</div>} />
         <Route path=":id" element={<div>detail</div>} />
       </Route>
-      <Route path="/mypage" element={<Outlet />}>
+      <Route path="/mypage" element={<Layout />}>
         <Route element={<ProtectedRouter />}>
           <Route index element={<div>mypage</div>} />
           <Route path="profile" element={<div>profile</div>} />
