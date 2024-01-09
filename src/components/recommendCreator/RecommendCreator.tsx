@@ -4,7 +4,7 @@ import RightContainer from "./RightContainer";
 import ArrowButton from "./ArrowButton";
 
 const RecomendCreator = () => {
-  const [currSlideIndex, setCurrSlideIndex] = useState(1);
+  const [currSlideIndex, setCurrSlideIndex] = useState(3);
 
   const slideHandler = (direction: number) => {
     setCurrSlideIndex((prev) => prev + direction);

@@ -17,10 +17,22 @@ function RightContainer({
   const slideRef = useRef<HTMLUListElement | null>(null);
 
   const beforeSlide = dummy[BG_NUM - 1];
+  const beforeSlide1 = dummy[BG_NUM - 2];
+  const beforeSlide2 = dummy[BG_NUM - 3];
   const afterSlide = dummy[0];
+  const afterSlide1 = dummy[1];
+  const afterSlide2 = dummy[2];
 
   // 무한 슬라이드를 위한 작업
-  const slideArr = [beforeSlide, ...dummy, afterSlide];
+  const slideArr = [
+    beforeSlide2,
+    beforeSlide1,
+    beforeSlide,
+    ...dummy,
+    afterSlide,
+    afterSlide1,
+    afterSlide2,
+  ];
   const SLIDE_NUM = slideArr.length; // 새로운 슬라이드의 length ==> 6
 
   const InfiniteSlideHandler = (flytoIndex: number) => {
@@ -35,11 +47,11 @@ function RightContainer({
           slideRef.current.style.transition = "all 300ms ease-in-out";
         }
       }, 100);
-    }, 500);
+    }, 300);
   };
 
-  if (currSlideIndex === SLIDE_NUM - 1) {
-    InfiniteSlideHandler(1);
+  if (currSlideIndex === SLIDE_NUM - 3) {
+    InfiniteSlideHandler(3);
   }
 
   if (currSlideIndex === 0) {
