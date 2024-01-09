@@ -38,7 +38,7 @@ export default {
         "bg-gray-3": "#A9A9A9",
         "bg-gray-4": "#666666",
         "system-red": "#FF0000",
-        "system-greem": "#07A320",
+        "system-green": "#07A320",
       },
       boxShadow: {
         "shadow-1": "0px 0px 30px 0px rgba(0, 0, 0, 0.05)",
