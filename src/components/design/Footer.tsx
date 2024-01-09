@@ -7,7 +7,7 @@ const Footer = () => {
   const handleOpen = () => setIsOpen((prev) => !prev);
 
   return (
-    <footer className="w-full">
+    <footer className="w-full pb-[10px]">
       <div className="max-w-[1200px] m-auto grid items-center grid-cols-[82px_auto_102px] gap-[65px] h-[42px]">
         <div>
           <img width={82} src="/logoSfacENblack.svg" alt="logo" />
