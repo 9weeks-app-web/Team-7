@@ -7,6 +7,10 @@ import RecomendCreator from "../components/recommendCreator/RecommendCreator";
 import { Link, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import FilterPopup from "../components/filterPopup/FilterPopup";
+import FilterButton from "../components/home/FilterButton";
+import FilterTag from "../components/home/FilterTag";
+import RegisterInfo from "../components/home/RegisterInfo";
+import CurrentProject from "../components/currentProject/CurrentProject";
 
 const Home = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -42,9 +46,12 @@ const Home = (): JSX.Element => {
                 <p className="text-primary-80 text-2xl mb-s-2">
                   SPECFOLIO에서 최고의 아이디어 탐색하기
                 </p>
-                <button className="text-primary-80 text-xl bg-[rgb(207,222,252)] py-s-2 px-s-3 rounded-full">
+                <Link
+                  to={"/portfolio"}
+                  className="text-primary-80 text-xl bg-[rgb(207,222,252)] py-s-2 px-s-3 rounded-full"
+                >
                   포트폴리오 더 보기
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -64,88 +71,14 @@ const Home = (): JSX.Element => {
         <div className="grid gap-s-2">
           <RecomendCreator />
         </div>
+        <div className="grid gap-s-2">
+          <CurrentProject />
+        </div>
       </div>
       <div className="mt-[77px] mb-[72px]">
         <RegisterInfo />
       </div>
     </PageLayout>
-  );
-};
-
-interface filterButtonProps {
-  children: string;
-  handleOpen: () => void;
-}
-
-const FilterButton = ({
-  children,
-  handleOpen,
-}: filterButtonProps): JSX.Element => {
-  return (
-    <div
-      className="text-xs gap-[4px] text-white bg-primary-50 p-[11px] rounded-full flex cursor-pointer"
-      onClick={handleOpen}
-    >
-      <img src="./filterWhite.svg" alt="filter" />
-      <span>{children}</span>
-    </div>
-  );
-};
-
-interface filterTagProps {
-  children: string;
-}
-
-const FilterTag = ({ children }: filterTagProps): JSX.Element => {
-  return (
-    <div className="text-xs gap-[4px] text-primary-70 p-[10px] border border-primary-70 rounded-full flex cursor-pointer">
-      <img src="./checkPrimary.svg" alt="check" />
-      <span>{children}</span>
-    </div>
-  );
-};
-
-const RegisterInfo = (): JSX.Element => {
-  return (
-    <div className="grid gap-s-3">
-      <div className="text-center text-neutral-70 text-2xl">
-        <p>회원가입 또는 로그인으로 SPECFOLIO</p>
-        <p>멋진 활동들을 펼쳐보세요.</p>
-      </div>
-      <div className="flex justify-center items-center gap-s-2">
-        <RegisterInfoButton to="/login" isLogin={true}>
-          로그인
-        </RegisterInfoButton>
-        <span className="text-neutral-40 text-xl">또는</span>
-        <RegisterInfoButton to="signup">회원가입</RegisterInfoButton>
-      </div>
-    </div>
-  );
-};
-
-interface registerInfoButtonProps {
-  children: string;
-  isLogin?: boolean;
-  to: string;
-}
-
-const RegisterInfoButton = ({
-  children,
-  isLogin,
-  to,
-}: registerInfoButtonProps) => {
-  const loginStyle = "text-neutral-90 border border-neutral-10";
-  const signupStyle = "bg-neutral-90 text-white";
-
-  return (
-    <Link
-      to={to}
-      className={`px-s-3 py-[10px] text-2xl rounded-full ${
-        isLogin ? loginStyle : signupStyle
-      }`}
-    >
-      {children}
-    </Link>
   );
 };
 
