@@ -29,7 +29,7 @@ export default {
         "neutral-20": "#CCCCCC",
         "neutral-10": "#E6E6E6",
         "line-blue": "#99BDFF",
-        "line-gray-1": "##F3F3F3",
+        "line-gray-1": "#F3F3F3",
         "line-gray-2": "#E6E6E6",
         "bg-white": "#F5F8FF",
         "bg-gray-1": "#F8F8F9",
