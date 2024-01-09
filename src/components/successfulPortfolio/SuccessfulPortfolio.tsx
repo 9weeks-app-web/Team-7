@@ -1,54 +1,28 @@
 import { useState } from "react";
-import { banners } from "../../constants/banner";
 import LeftContainer from "./LeftContainer";
-import { SlideContainer } from "./SuccessfulPortfolio.styles";
 import RightContainer from "./RightContainer";
+import ArrowButton from "./ArrowButton";
 
 const SuccessfulPortfolio = (): JSX.Element => {
-  const [currentSlideIndex, setCurrentSlide] = useState(0);
-  const [style, setStyle] = useState({
-    transform: `translateX(-${270 * currentSlideIndex}px)`,
-    transition: `all 0.4s ease-in-out`,
-  });
+  const [currSlideIndex, setCurrSlideIndex] = useState(3);
 
-  const handleRightSlide = () => {
-    const nextIndex = currentSlideIndex + 1;
-
-    if (nextIndex < banners.length - 1) {
-      setCurrentSlide(nextIndex);
-    } else {
-      setCurrentSlide(0);
-    }
-
-    setStyle({
-      transform: `translateX(-${270 * nextIndex}px)`,
-      transition: "all 0.4s ease-in-out",
-    });
-  };
-
-  const handleLeftSlide = () => {
-    const prevIndex = currentSlideIndex - 1;
-
-    if (prevIndex > 0) {
-      setCurrentSlide(prevIndex);
-    } else {
-      setCurrentSlide(banners.length - 1);
-    }
-
-    setStyle({
-      transform: `translateX(-${270 * prevIndex}px)`,
-      transition: `all 0.4s ease-in-out`,
-    });
+  const slideHandler = (direction: number) => {
+    setCurrSlideIndex((prev) => prev + direction);
   };
 
   return (
-    <SlideContainer className="bg-primary-80">
-      <LeftContainer
-        handleRightSlide={handleRightSlide}
-        handleLeftSlide={handleLeftSlide}
-      />
-      <RightContainer style={style} />
-    </SlideContainer>
+    <div className="w-[1200px] mx-auto">
+      <div className="w-full h-[306px] flex bg-primary-80 py-[23px] relative">
+        <div className="flex flex-col">
+          <LeftContainer />
+          <ArrowButton slideHandler={slideHandler} />
+        </div>
+        <RightContainer
+          currSlideIndex={currSlideIndex}
+          setCurrSlideIndex={setCurrSlideIndex}
+        />
+      </div>
+    </div>
   );
 };
 
