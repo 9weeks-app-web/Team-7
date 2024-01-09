@@ -12,7 +12,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
   badge_pick,
 }: PortfolioBoxProps) => {
   const formatNumber = (number: number) => {
-    if (number >= 1000 && number < 1000000) {
+    if (number >= 0 && number < 1000000) {
       return (number / 1000).toFixed(1) + "k";
     } else if (number >= 1000000) {
       return (number / 1000000).toFixed(1) + "m";
@@ -43,7 +43,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
           />
           <div className="absolute bottom-0 left-0 z-10 w-full h-12 bg-gradient-to-t from-[#00000040] from-1% to-[#00000000] to-99%" />
         </div>
-        <span className="caption text-base text-white z-10 absolute bottom-0 left-0 py-[0.6875rem] px-[0.8125rem]">
+        <span className="w-[16.5rem] caption text-base text-white z-10 absolute bottom-0 left-0 py-[0.6875rem] px-[0.8125rem] truncate">
           {title}
         </span>
       </div>
