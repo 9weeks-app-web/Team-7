@@ -1,9 +1,8 @@
-import { LeftBtn, LeftWrapper, RightBtn } from "./SuccessfulPortfolio.styles";
 import { Link } from "react-router-dom";
 
-const LeftContainer = ({ handleRightSlide, handleLeftSlide }: any) => {
+const LeftContainer = () => {
   return (
-    <LeftWrapper>
+    <div className="w-[181px] text-primary-white py-[41px] pl-[20px] pr-[30px]">
       <h3 className="text-[24px] mb-[10px]">
         <strong>취업에 성공한</strong>
         <br />
@@ -14,15 +13,7 @@ const LeftContainer = ({ handleRightSlide, handleLeftSlide }: any) => {
       <Link to="" className="text-[16px] block mb-[20px]">
         1,507건 모아보기 &gt;
       </Link>
-      <div className="flex gap-[10px]">
-        <LeftBtn onClick={handleLeftSlide}>
-          <img src="/arrowLeft.svg" alt="왼쪽 버튼 누르기" />
-        </LeftBtn>
-        <RightBtn onClick={handleRightSlide}>
-          <img src="/arrowRight.svg" alt="오른쪽 버튼 누르기" />
-        </RightBtn>
-      </div>
-    </LeftWrapper>
+    </div>
   );
 };
 
