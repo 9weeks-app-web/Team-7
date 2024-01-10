@@ -1,4 +1,4 @@
-interface ProfileProps {
+interface AvatarProps {
   src?: string;
   alt?: string;
   width?: string;
@@ -8,7 +8,7 @@ interface ProfileProps {
   customStyle?: string;
 }
 
-const Profile = ({
+const Avatar = ({
   src = "/basicProfile.svg",
   alt = "basic-profile",
   width = "w-[82px]",
@@ -16,11 +16,11 @@ const Profile = ({
   border = "rounded-full",
   spacing,
   customStyle,
-}: ProfileProps) => {
+}: AvatarProps) => {
   return (
-    <div className={`profile ${spacing} ${customStyle}`}>
+    <div className={`avatar ${spacing} ${customStyle}`}>
       <img src={src} alt={alt} className={`${border} ${width} ${height}`} />
     </div>
   );
 };
-export default Profile;
+export default Avatar;
