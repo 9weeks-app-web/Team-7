@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const POPULAR_TOOLS = [
   { name: "Adobe Photoshop", image: "/photoshopIcon.svg" },
   { name: "Adobe Illustrator", image: "/illustIcon.svg" },
@@ -6,7 +8,18 @@ const POPULAR_TOOLS = [
   { name: "Blender", image: "/blenderIcon.svg" },
 ];
 
-const UsedTool = () => {
+const UsedTool = ({
+  handleFilter,
+}: {
+  handleFilter: (filter: string) => void;
+}) => {
+  const [selectedToolsIndex, setSelectedToolsIndex] = useState<string>("");
+
+  const handleColorClick = (index: string) => {
+    setSelectedToolsIndex(index);
+    handleFilter(index);
+  };
+
   return (
     <div>
       <div className="text-2 text-neutral-90 px-[14px]">사용 툴 검색</div>
@@ -15,6 +28,7 @@ const UsedTool = () => {
           className="caption w-[260px] h-[40px] pl-[38px] pr-[14px] py-[7px] border border-[#D9D9D9] rounded-md"
           type="text"
           placeholder="포트폴리오에 사용된 툴을 검색해보세요"
+          defaultValue={selectedToolsIndex}
         />
         <div className="absolute top-0 translate-x-[14px] translate-y-[13px]">
           <img src="/toolSearch.svg" alt="search" />
@@ -26,8 +40,11 @@ const UsedTool = () => {
           <button
             key={tool.name}
             className="flex items-center px-[14px] py-[6px]"
+            onClick={() => handleColorClick(tool.name)}
           >
-            <img src={tool.image} alt="" />
+            <div className="w-s-2 h-s2">
+              <img src={tool.image} alt="" />
+            </div>
             <span className="caption text-neutral-60 ml-[10px]">
               {tool.name}
             </span>

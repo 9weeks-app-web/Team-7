@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { PortfolioBoxProps } from "../../types/portfolioBoxTypes.tsx";
 
 const PortfolioBox: React.FC<PortfolioBoxProps> = ({
@@ -11,6 +12,8 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
   badge_type,
   badge_pick,
 }: PortfolioBoxProps) => {
+  const navigate = useNavigate();
+
   const formatNumber = (number: number) => {
     if (number >= 0 && number < 1000000) {
       return (number / 1000).toFixed(1) + "k";
@@ -22,7 +25,10 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
   };
 
   return (
-    <div className="w-[17.625rem] rounded-md flex flex-col items-start gap-y-1 drop-shadow-sm bg-white pb-1">
+    <div
+      className="w-[17.625rem] rounded-md flex flex-col items-start gap-y-1 drop-shadow-sm bg-white pb-1 cursor-pointer"
+      onClick={() => navigate("/portfolio/1")}
+    >
       <div className="relative">
         <div className="absolute top-0 right-0 flex gap-x-2.5 pl-2.5 pr-2.5">
           {badge_premium === true && (
