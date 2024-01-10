@@ -1,47 +1,58 @@
-export const banners = [
+export const successfulDummy = [
   {
-    id: 1,
-    img: "pcEventBanner1",
-    text: {
-      title: "SFAC",
-      context: "컨텐츠",
+    // id: 1,
+    date: "2022년 상반기 포트폴리오",
+    corporate: "corporateNaver",
+    title: "네카라쿠배직토당야 5곳 합격",
+    coImg: "successfulThumbnail1",
+    field: {
+      first: "영상/모션그래픽",
+      second: "C4D",
     },
-    corporate: "corporateNaver.png",
+    username: "맥킨토시",
+    profile: "winner1",
+    job: "PM",
   },
   {
-    id: 2,
-    img: "pcEventBanner2",
-    text: {
-      title: "SFAC",
-      context: "컨텐츠",
+    // id: 2,
+    date: "2023년 하반기 포트폴리오",
+    corporate: "corporateKakao",
+    title: "카카오 외 8곳 합격",
+    coImg: "successfulThumbnail2",
+    field: {
+      first: "UXUI 디자인",
+      second: "국내 대기업",
     },
-    corporate: "corporateNaver.png",
+    username: "볼디 디자인",
+    profile: "winner2",
+    job: "UXUI디자이너",
   },
   {
-    id: 3,
-    img: "pcEventBanner3",
-    text: {
-      title: "",
-      context: "",
+    // id: 3,
+    date: "2022년 상반기 포트폴리오",
+    corporate: "corporateSamsung",
+    title: "삼성전자 외 5곳 합격",
+    coImg: "successfulThumbnail3",
+    field: {
+      first: "영상/모션그래픽",
+      second: "C4D",
     },
-    corporate: "corporateNaver.png",
+    username: "POXI",
+    profile: "winner3",
+    job: "브랜드디자이너",
   },
   {
-    id: 4,
-    img: "pcEventBanner4",
-    text: {
-      title: "당신의 상상을 현실로!",
-      context: "컨텐츠",
+    // id: 4,
+    date: "2023년 상반기 포트폴리오",
+    corporate: "corporateGoogle",
+    title: "FANG 회사 합격",
+    coImg: "successfulThumbnail4",
+    field: {
+      first: "프로덕트 디자인",
+      second: "해외기업",
     },
-    corporate: "corporateNaver.png",
-  },
-  {
-    id: 5,
-    img: "pcEventBanner5",
-    text: {
-      title: "SFAC",
-      context: "컨텐츠",
-    },
-    corporate: "corporateNaver.png",
+    username: "Matt",
+    profile: "winner4",
+    job: "UXUI디자이너",
   },
 ];
