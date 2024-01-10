@@ -1,7 +1,7 @@
 import Card from "../design/Card";
-import Profile from "../design/Profile";
+import Avatar from "../design/Avatar";
 import Badge from "../design/Badge";
-import TeamMemberProfile from "./TeamMemberProfile";
+import TeamMemberAvatar from "./TeamMemberAvatar";
 import { Project } from "../../types/projectTypes";
 
 interface ProjectsProps {
@@ -11,14 +11,14 @@ const ProjectCard = ({ project }: ProjectsProps) => {
   return (
     <Card>
       <div className="flex">
-        <Profile
+        <Avatar
           src={project.image}
           alt={project.image}
           width="w-[82px]"
           height="h-[82px]"
           border="rounded-[10px]"
           spacing="mr-[10px]"
-        ></Profile>
+        ></Avatar>
         <div>
           <Badge
             width="w-[78px]"
@@ -74,7 +74,7 @@ const ProjectCard = ({ project }: ProjectsProps) => {
         <pre>{project.introduction}</pre>
       </div>
       <div className="mt-[40px]">
-        <TeamMemberProfile />
+        <TeamMemberAvatar />
         <div className="caption text-neutral-40 float-right mt-[16px] px-[20px]">
           <span>{project.createdAt}일전</span>
           <span> • </span>
