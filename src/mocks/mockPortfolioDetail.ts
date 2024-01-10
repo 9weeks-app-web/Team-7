@@ -17,6 +17,8 @@ interface MOCK_PORTFOLIO_DETAIL_Types {
   badge_premium: boolean;
   badge_type: string;
   badge_pick: boolean;
+  keyword: string[];
+  relatedPortfolio: { title: string; thumbnail: string }[];
 }
 
 export const MOCK_PORTFOLIO_DETAIL: MOCK_PORTFOLIO_DETAIL_Types[] = [
@@ -49,19 +51,19 @@ export const MOCK_PORTFOLIO_DETAIL: MOCK_PORTFOLIO_DETAIL_Types[] = [
     useTools: ["figmaIcon", "photoshopIcon", "illustratorIcon"],
     coments: [
       {
-        profile: "profile_1",
+        profile: "profile_5",
         userName: "디자인 스튜디오 연",
         coment: "정말 멋진 작품이네요.",
         date: "19분 전",
       },
       {
-        profile: "profile_1",
+        profile: "profile_6",
         userName: "김양현",
         coment: "우와 대단하시네요!!",
         date: "4시간 전",
       },
       {
-        profile: "profile_1",
+        profile: "profile_8",
         userName: "손시아",
         coment: "깔끔하고 좋네요.",
         date: "2024.01.12",
@@ -70,5 +72,24 @@ export const MOCK_PORTFOLIO_DETAIL: MOCK_PORTFOLIO_DETAIL_Types[] = [
     badge_premium: true,
     badge_type: "UI/UX",
     badge_pick: true,
+    keyword: ["UXUI디자인", "브랜드아이덴티티디자인", "모바일앱"],
+    relatedPortfolio: [
+      {
+        title: "UX UI - 콘셉트 아트",
+        thumbnail: "relatedPortfolioThumbnail-1",
+      },
+      {
+        title: "Title",
+        thumbnail: "relatedPortfolioThumbnail-2",
+      },
+      {
+        title: "Title",
+        thumbnail: "relatedPortfolioThumbnail-3",
+      },
+      {
+        title: "Title",
+        thumbnail: "relatedPortfolioThumbnail-4",
+      },
+    ],
   },
 ];
