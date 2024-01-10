@@ -11,7 +11,7 @@ const PrevArrowButton = ({ handleSlideDirection }: PrevArrowButtonProps) => {
   return (
     <button
       onClick={handlePrevClick}
-      className="absolute  top-[-6px] left-[-20px] h-[68px] bg-gradient-to-l from-[#ffffff00] via-[#ededed] to-[#ffffff]"
+      className="absolute top-[-6px] left-[-20px] h-[68px] bg-gradient-to-l from-[#ffffff00] via-[#ededed] to-[#ffffff] z-[101]"
     >
       <img src="categoryJobs/arrowLeft.svg" alt="" />
     </button>

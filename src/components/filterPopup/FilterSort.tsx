@@ -21,7 +21,7 @@ const FilterSort: React.FC = () => {
       />
 
       {isPopup && (
-        <div className="absolute flex flex-col items-start gap-y-1.5 mt-[6px] w-[14.4rem] p-1.5 rounded-md border-[1px] border-solid border-[#e6e6e6] bg-white shadow-sm">
+        <div className="absolute flex flex-col items-start gap-y-1.5 mt-[6px] w-[14.4rem] p-1.5 rounded-md border-[1px] border-solid border-[#e6e6e6] bg-white shadow-sm z-[1000]">
           <FilterPopupButton
             label="인기순"
             isActive={selectedFilter === "popularity"}

@@ -15,11 +15,16 @@ const colors = [
   { name: "핑크", hex: "#FFC1DF", stroke: "#F2B0D0", usageCount: "4" },
 ];
 
-const WorkColor = () => {
+const WorkColor = ({
+  handleFilter,
+}: {
+  handleFilter: (filter: string) => void;
+}) => {
   const [selectedColorIndex, setSelectedColorIndex] = useState<string>("");
 
   const handleColorClick = (index: string) => {
     setSelectedColorIndex(index);
+    handleFilter(index);
   };
 
   return (
