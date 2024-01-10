@@ -11,12 +11,15 @@ import FilterButton from "../components/home/FilterButton";
 import FilterTag from "../components/home/FilterTag";
 import RegisterInfo from "../components/home/RegisterInfo";
 import CurrentProject from "../components/currentProject/CurrentProject";
+import FloatingButton from "../components/design/FloatingButton";
+import { useAppSelector } from "../hooks/redux";
 
 const Home = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleOpen = () => setIsOpen((prev) => !prev);
   const [searchParams] = useSearchParams();
   const sub = searchParams.get("sub");
+  const isLogined = useAppSelector((state) => state.auth.isAuthenticated);
 
   return (
     <PageLayout>
@@ -76,8 +79,9 @@ const Home = (): JSX.Element => {
         </div>
       </div>
       <div className="mt-[77px] mb-[72px]">
-        <RegisterInfo />
+        {!isLogined && <RegisterInfo />}
       </div>
+      <FloatingButton />
     </PageLayout>
   );
 };

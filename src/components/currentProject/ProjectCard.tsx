@@ -65,7 +65,7 @@ const ProjectCard = ({ project }: ProjectsProps) => {
       </div>
       <div className="flex mt-[20px]">
         {project.categories.map((category) => (
-          <Badge color="bg-[#F5F8FF] text-neutral-70 mr-[6px]">
+          <Badge key={category} color="bg-[#F5F8FF] text-neutral-70 mr-[6px]">
             {category}
           </Badge>
         ))}

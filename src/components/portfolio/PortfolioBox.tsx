@@ -37,7 +37,7 @@ const PortfolioBox: React.FC<PortfolioBoxProps> = ({
         </div>
         <div>
           <img
-            className="w-full h-[17.625rem] rounded-t-l"
+            className="w-full h-[17.625rem] rounded-t-md"
             src={`./portfolio/${thumbnail}.png`}
             alt={thumbnail}
           />
