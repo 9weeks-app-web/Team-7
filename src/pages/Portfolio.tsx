@@ -1,6 +1,7 @@
 import FilterRecommend from "../components/filterPopup/FilterRecommend";
 import FilterSort from "../components/filterPopup/FilterSort";
 import PageLayout from "../components/layout/PageLayout";
+import PortfolioList from "../components/portfolio/PortfolioList";
 
 const Portfolio = () => {
   return (
@@ -10,6 +11,7 @@ const Portfolio = () => {
         <FilterSort />
         <FilterRecommend />
       </div>
+      <PortfolioList />
     </PageLayout>
   );
 };
