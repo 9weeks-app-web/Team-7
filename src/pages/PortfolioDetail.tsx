@@ -6,6 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 import PrevArrow from "../components/portfolioDetail/PrevArrow";
 import NextArrow from "../components/portfolioDetail/NextArrow";
 import SliderItem from "../components/portfolioDetail/SliderItem";
+import Tooltip from "../components/portfolio/Tooltip";
+import Avatar from "../components/design/Avatar";
+import SocialProfile from "../components/portfolio/SocialProfile";
+import { MOCK_USER_PROFILE } from "../mocks/mockUser";
 
 const settings = {
   className: "slider variable-width",
@@ -46,13 +50,18 @@ const PortfolioDetail = () => {
               <div className="p-s-4 grid gap-[60px]">
                 <div className="flex justify-between">
                   <div className="flex gap-[12px]">
-                    <div className="w-[40px] h-[40px]">
-                      <img
-                        className="w-full h-full rounded-full"
-                        src={`/portfolio/${detailData.users[0].profile}.png`}
-                        alt="profile"
-                      />
-                    </div>
+                    <Tooltip
+                      hoverSource={
+                        <Avatar
+                          width="w-[40px]"
+                          height="w-[40px]"
+                          src={`/portfolio/${detailData.users[0].profile}.png`}
+                        />
+                      }
+                      TooltipContent={
+                        <SocialProfile profile={MOCK_USER_PROFILE} />
+                      }
+                    />
                     <div>
                       <p className="font-bold text-sm text-neutral-90">
                         {detailData.title}
