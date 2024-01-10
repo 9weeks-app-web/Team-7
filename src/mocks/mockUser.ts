@@ -36,3 +36,30 @@ export const MOCK_RECOVERY_USERS: RecoveryUser[] = [
     phoneNumber: "010-1234-5678",
   },
 ];
+
+export const MOCK_USER_PROFILE = {
+  name: "민들레",
+  role: "그래픽 디자인, UX UI 디자인",
+  work: {
+    count: 14,
+    recentWorks: [
+      {
+        id: "123",
+        name: "first work",
+        image: "/portfolio/portfolioThumbnail_1.png",
+      },
+      {
+        id: "234",
+        name: "second work",
+        image: "/portfolio/portfolioThumbnail_2.png",
+      },
+      {
+        id: "345",
+        name: "3th work",
+        image: "/portfolio/portfolioThumbnail_3.png",
+      },
+    ],
+  },
+  following: 0,
+  follower: 132,
+};
