@@ -1,8 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import TopGNBTab from "../common/TopGNBTab";
+import { useAppSelector } from "../../hooks/redux";
 
 const TopGNB = (): JSX.Element => {
   const { pathname } = useLocation();
+  const isLogined = useAppSelector((state) => state.auth.isAuthenticated);
 
   return (
     <nav className="fixed top-0 left-0 h-[96px] bg-white shadow-shadow-1 w-full z-[100000]">
@@ -49,18 +51,34 @@ const TopGNB = (): JSX.Element => {
                 </div>
               </div>
               <div className="flex items-center">
-                <Link
-                  to={"/login"}
-                  className="text-xs font-semibold w-[80px] text-center"
-                >
-                  로그인
-                </Link>
-                <Link
-                  to={"/signup"}
-                  className="bg-black text-white text-xs font-semibold rounded-full px-[20px] py-[10px]"
-                >
-                  회원가입
-                </Link>
+                {isLogined ? (
+                  <div className="flex gap-s-2 ml-[60px]">
+                    <img src="/messageIcon.svg" alt="message" />
+                    <img src="/alarmIcon.svg" alt="alarm" />
+                    <div className="w-[23px] h-[23px]">
+                      <img
+                        className="rounded-full"
+                        src="/professional/profile_1.png"
+                        alt="profile"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <Link
+                      to={"/login"}
+                      className="text-xs font-semibold w-[80px] text-center"
+                    >
+                      로그인
+                    </Link>
+                    <Link
+                      to={"/signup"}
+                      className="bg-black text-white text-xs font-semibold rounded-full px-[20px] py-[10px]"
+                    >
+                      회원가입
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
