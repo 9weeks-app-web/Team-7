@@ -9,8 +9,8 @@ interface AvatarProps {
 }
 
 const Avatar = ({
-  src = "/basicProfile.svg",
-  alt = "basic-profile",
+  src = "/basicAvatar.svg",
+  alt = "basic-avatar",
   width = "w-[82px]",
   height = "h-[82px]",
   border = "rounded-full",
