@@ -15,13 +15,11 @@ const FilterButton: React.FC<FilterButtonProps> = ({
       }`}
       onClick={onClick}
     >
-      <img src={`./public/${icon}.svg`} alt={icon} />
+      <img src={`/${icon}.svg`} alt={icon} />
       <span>{label}</span>
       <img
         src={`${
-          isActive
-            ? "./public/filterArrowActive.svg"
-            : "./public/filterArrowDefault.svg"
+          isActive ? "/filterArrowActive.svg" : "/filterArrowDefault.svg"
         }`}
         alt="filterArrowDefault"
       />

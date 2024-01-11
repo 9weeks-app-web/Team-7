@@ -10,6 +10,7 @@ import Tooltip from "../components/portfolio/Tooltip";
 import Avatar from "../components/design/Avatar";
 import SocialProfile from "../components/portfolio/SocialProfile";
 import { MOCK_USER_PROFILE } from "../mocks/mockUser";
+import { useEffect } from "react";
 
 const settings = {
   className: "slider variable-width",
@@ -29,6 +30,10 @@ const PortfolioDetail = () => {
   if (detailDatas.length === 0) return <div>유효하지 않은 URL입니다.</div>;
 
   const detailData = detailDatas[0];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="bg-[rgba(0,0,0,0.7)]">
