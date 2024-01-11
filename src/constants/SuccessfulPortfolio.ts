@@ -1,0 +1,58 @@
+export const successfulDummy = [
+  {
+    // id: 1,
+    date: "2022년 상반기 포트폴리오",
+    corporate: "corporateNaver",
+    title: "네카라쿠배직토당야 5곳 합격",
+    coImg: "successfulThumbnail1",
+    field: {
+      first: "영상/모션그래픽",
+      second: "C4D",
+    },
+    username: "맥킨토시",
+    profile: "winner1",
+    job: "PM",
+  },
+  {
+    // id: 2,
+    date: "2023년 하반기 포트폴리오",
+    corporate: "corporateKakao",
+    title: "카카오 외 8곳 합격",
+    coImg: "successfulThumbnail2",
+    field: {
+      first: "UXUI 디자인",
+      second: "국내 대기업",
+    },
+    username: "볼디 디자인",
+    profile: "winner2",
+    job: "UXUI디자이너",
+  },
+  {
+    // id: 3,
+    date: "2022년 상반기 포트폴리오",
+    corporate: "corporateSamsung",
+    title: "삼성전자 외 5곳 합격",
+    coImg: "successfulThumbnail3",
+    field: {
+      first: "영상/모션그래픽",
+      second: "C4D",
+    },
+    username: "POXI",
+    profile: "winner3",
+    job: "브랜드디자이너",
+  },
+  {
+    // id: 4,
+    date: "2023년 상반기 포트폴리오",
+    corporate: "corporateGoogle",
+    title: "FANG 회사 합격",
+    coImg: "successfulThumbnail4",
+    field: {
+      first: "프로덕트 디자인",
+      second: "해외기업",
+    },
+    username: "Matt",
+    profile: "winner4",
+    job: "UXUI디자이너",
+  },
+];

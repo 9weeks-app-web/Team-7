@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "./counterSlice";
+import authSlice from "./authSlice";
+import joinSlice from "./joinSlice";
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice,
+    auth: authSlice,
+    join: joinSlice,
   },
 });
 
