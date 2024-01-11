@@ -28,7 +28,7 @@ const SavePopup: React.FC<SavePopupProps> = ({
             >
               <img
                 className="w-[3.125rem] h-[3.125rem] rounded-md"
-                src={`../public/${saveFolder.thumnail}.png`}
+                src={`/${saveFolder.thumnail}.png`}
                 alt={`${saveFolder.thumnail}`}
               />
               <span className="text-1 text-sm text-neutral-90">

@@ -62,7 +62,7 @@ const DetailFloatingButtonList = () => {
             {selectedContent === content ? (
               <img
                 className="mr-[0.94rem]"
-                src="../public/checkBlue.svg"
+                src="/checkBlue.svg"
                 alt="checkBlue"
               />
             ) : (
@@ -109,12 +109,12 @@ const DetailFloatingButtonList = () => {
           <span className="text-1 text-neutral-90 text-size-2xl">
             작업 공유하기
           </span>
-          <img src="../public/closeBlack.svg" alt="closeBlack" />
+          <img src="/closeBlack.svg" alt="closeBlack" />
         </div>
         <div className="flex gap-x-[1.88rem] items-center">
           <img
             className="w-[8.125rem] h-[8.125rem] rounded-md"
-            src="../public/shareThumbnail.png"
+            src="/shareThumbnail.png"
             alt="shareThumbnail"
           />
           <span className="caption text-base">

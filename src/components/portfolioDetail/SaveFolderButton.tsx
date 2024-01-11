@@ -20,7 +20,7 @@ const SaveFolderButton = () => {
     <div>
       <button className="flex items-center" onClick={handleSaveFolder}>
         <span>{selectedFolder ? selectedFolder.title : "UX UI 레퍼런스"}</span>
-        <img src="../public/downArrowNeutral.svg" alt="downArrowNeutral" />
+        <img src="/downArrowNeutral.svg" alt="downArrowNeutral" />
       </button>
       {saveFolder ? (
         <SavePopup
