@@ -12,7 +12,7 @@ const DetailFloatingButton: React.FC<DetailFloatingButtonProps> = ({
     <div className="flex flex-col gap-y-2.5 items-center" onClick={onClick}>
       <img
         className="w-[2.8125rem] h-[2.8125rem] rounded-full"
-        src={`./public/${isActive ? `${iconActive}` : `${iconDefault}`}`}
+        src={`../public/${isActive ? `${iconActive}` : `${iconDefault}`}`}
         alt={iconDefault}
       />
       <span>{label}</span>

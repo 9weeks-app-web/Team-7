@@ -11,6 +11,8 @@ import Avatar from "../components/design/Avatar";
 import SocialProfile from "../components/portfolio/SocialProfile";
 import { MOCK_USER_PROFILE } from "../mocks/mockUser";
 import { useEffect } from "react";
+import DetailFloatingButtonList from "../components/design/DetailFloatingButtonList";
+import SaveFolderButton from "../components/portfolioDetail/SaveFolderButton";
 
 const settings = {
   className: "slider variable-width",
@@ -82,7 +84,7 @@ const PortfolioDetail = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-s-2">
-                    <p>UX UI 레퍼런스</p>
+                    <SaveFolderButton />
                     <button className="font-sm text-white bg-primary-90 px-[13px] py-s-1 rounded-full">
                       저장
                     </button>
@@ -310,6 +312,7 @@ const PortfolioDetail = () => {
           </div>
         </div>
       </div>
+      <DetailFloatingButtonList />
     </div>
   );
 };

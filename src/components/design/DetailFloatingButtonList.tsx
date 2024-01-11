@@ -17,8 +17,11 @@ const DetailFloatingButtonList = () => {
     setIsContentsActive(!isContentsActive);
   };
 
-  const handleContentsList = (content) => {
-    setSelectedContent(content === selectedContent ? null : content);
+  const handleContentsList = (content: string) => {
+    setSelectedContent(
+      (prevSelectedContent: string | null) =>
+        (content === prevSelectedContent ? null : content) as null
+    );
   };
 
   const handleDelete = () => {
@@ -27,6 +30,10 @@ const DetailFloatingButtonList = () => {
 
   const handleShare = () => {
     setIsSharePopup(!isSharePopup);
+  };
+
+  const handleDeletePortfolio = () => {
+    window.history.back();
   };
 
   const currentUrl = window.location.href;
@@ -41,30 +48,28 @@ const DetailFloatingButtonList = () => {
   ];
 
   const additionalContent = (
-    <div className="fixed top-[23.5rem] right-[5.19rem] w-[8.5rem] bg-white rounded-md py-1 ">
-      <div className="fixed top-[23.5rem] right-[5.19rem] w-[8.5rem] bg-white rounded-md py-1 ">
-        <div className="flex flex-col text-normal text-xs text-neutral-100 gap-y-[0.44rem]">
-          {MOCK_CONTENTS.map((content) => (
-            <div
-              key={content}
-              className={`flex justify-between rounded-md hover:bg-[#f3f3f3] py-1 pl-2 ${
-                selectedContent === content ? "bg-[#f3f3f3]" : "bg-white"
-              }`}
-              onClick={() => handleContentsList(content)}
-            >
-              {content}
-              {selectedContent === content ? (
-                <img
-                  className="mr-[0.94rem]"
-                  src="./public/checkBlue.svg"
-                  alt="checkBlue"
-                />
-              ) : (
-                <></>
-              )}
-            </div>
-          ))}
-        </div>
+    <div className="fixed top-[23.5rem] right-[2rem] w-[8.5rem] bg-white rounded-md py-1 ">
+      <div className="flex flex-col text-normal text-xs text-neutral-100 gap-y-[0.44rem]">
+        {MOCK_CONTENTS.map((content) => (
+          <div
+            key={content}
+            className={`flex justify-between rounded-md hover:bg-[#f3f3f3] py-1 pl-2 ${
+              selectedContent === content ? "bg-[#f3f3f3]" : "bg-white"
+            }`}
+            onClick={() => handleContentsList(content)}
+          >
+            {content}
+            {selectedContent === content ? (
+              <img
+                className="mr-[0.94rem]"
+                src="../public/checkBlue.svg"
+                alt="checkBlue"
+              />
+            ) : (
+              <></>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -90,6 +95,7 @@ const DetailFloatingButtonList = () => {
             type="button"
             height="h-[2.5rem]"
             padding="py-[0.81rem] px-[0.88rem]"
+            onClick={handleDeletePortfolio}
           />
         </div>
       </div>
@@ -103,12 +109,12 @@ const DetailFloatingButtonList = () => {
           <span className="text-1 text-neutral-90 text-size-2xl">
             작업 공유하기
           </span>
-          <img src="./public/closeBlack.svg" alt="closeBlack" />
+          <img src="../public/closeBlack.svg" alt="closeBlack" />
         </div>
         <div className="flex gap-x-[1.88rem] items-center">
           <img
             className="w-[8.125rem] h-[8.125rem] rounded-md"
-            src="./public/shareThumbnail.png"
+            src="../public/shareThumbnail.png"
             alt="shareThumbnail"
           />
           <span className="caption text-base">
@@ -127,7 +133,7 @@ const DetailFloatingButtonList = () => {
     </div>
   );
   return (
-    <div className="fixed top-[6.25rem] right-[14.94rem] flex flex-col gap-y-5 items-center text-white text-normal text-xs">
+    <div className="fixed top-[6.25rem] right-[12rem] flex flex-col gap-y-5 items-center text-white text-normal text-xs">
       <DetailFloatingButton
         iconActive="detailProfile.png"
         iconDefault="detailProfile.png"
