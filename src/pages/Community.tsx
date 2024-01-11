@@ -15,7 +15,7 @@ import BestPost from "../components/community/home/BestPost";
 import PostFilter from "../components/community/post/PostFilter";
 import PostList from "../components/community/post/PostList";
 import PopularPost from "../components/community/post/PopularPost";
-import Pagenation from "../components/community/post/PageNation";
+import Pagenation from "../components/community/post/PagenationBox";
 import CommunityPostButton from "../components/community/CommunityPostButton";
 import PopularKeyword from "../components/community/post/PopularKeyword";
 
