@@ -7,7 +7,7 @@ interface ProjectHomeCardProps {
 
 const ProjectTeamMemberProfile = ({ projectData }: ProjectHomeCardProps) => {
   return (
-    <div className="flex relative">
+    <div className="flex relative z-10">
       <Avatar
         src={projectData[0].teamMembers[0]}
         alt="first-member-profile"
