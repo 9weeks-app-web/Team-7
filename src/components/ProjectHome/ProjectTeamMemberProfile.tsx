@@ -1,4 +1,3 @@
-import Profile from "../design/Profile";
 import { ProjectInterest, ProjectHot } from "../../constants/projectHome";
 
 interface ProjectHomeCardProps {
