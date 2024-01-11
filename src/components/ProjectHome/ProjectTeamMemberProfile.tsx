@@ -1,5 +1,5 @@
-import Profile from "../design/Profile";
 import { ProjectInterest, ProjectHot } from "../../constants/projectHome";
+import Avatar from "../design/Avatar";
 
 interface ProjectHomeCardProps {
   projectData: ProjectHot | ProjectInterest;
@@ -8,14 +8,14 @@ interface ProjectHomeCardProps {
 const ProjectTeamMemberProfile = ({ projectData }: ProjectHomeCardProps) => {
   return (
     <div className="flex relative">
-      <Profile
+      <Avatar
         src={projectData[0].teamMembers[0]}
         alt="first-member-profile"
         width="w-[33px]"
         height="h-[33px]"
         border="rounded-full border-2 border-white"
       />
-      <Profile
+      <Avatar
         src={projectData[0].teamMembers[1]}
         alt="second-member-profile"
         width="w-[33px]"
@@ -23,7 +23,7 @@ const ProjectTeamMemberProfile = ({ projectData }: ProjectHomeCardProps) => {
         border="rounded-full border-2 border-white"
         spacing="ml-[18px]"
       />
-      <Profile
+      <Avatar
         src={projectData[0].teamMembers[1]}
         alt="second-member-profile"
         width="w-[33px]"
@@ -32,7 +32,7 @@ const ProjectTeamMemberProfile = ({ projectData }: ProjectHomeCardProps) => {
         spacing="ml-[18px]"
         customStyle="z-20 absolute left-0 top-0 cursor-pointer"
       />
-      <Profile
+      <Avatar
         src={projectData[0].teamMembers[2]}
         alt="3rd-member-profile"
         width="w-[33px]"
