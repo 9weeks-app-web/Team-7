@@ -6,7 +6,7 @@ interface ProjectHomeCardProps {
 
 const ProjectList = ({ projectData }: ProjectHomeCardProps) => {
   return (
-    <ul className="flex flex-col gap-[26px] mb-[100px]">
+    <ul className="flex flex-col gap-[26px] mb-[26px]">
       {projectData.map((projectItem) => (
         <li className="flex gap-[50px] w-full h-[108px] items-center bg-white rounded-[20px] py-[20px] px-[50px] shadow-shadow-2 box-border">
           <div className="flex gap-[20px] w-[240px]">

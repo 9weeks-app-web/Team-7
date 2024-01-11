@@ -5,6 +5,7 @@ import Banner from "../components/banner/Banner";
 import { ProjectInterest, ProjectHot } from "../constants/projectHome";
 import ProjectList from "../components/ProjectHome/ProjectList";
 import { useState } from "react";
+import ProjectRecruitment from "../components/ProjectHome/ProjectRecruitment";
 
 const Projects = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
@@ -73,6 +74,13 @@ const Projects = () => {
               ) : (
                 <ProjectList projectData={ProjectInterest} />
               )}
+              <div className="w-[60px] h-[60px] mx-auto mt-[26px] mb-[85px]">
+                <img
+                  src="/projectHome/loading.svg"
+                  alt="로딩중 입니다."
+                  className="w-full"
+                />
+              </div>
             </div>
 
             {/* 탭박스2 */}
@@ -81,6 +89,7 @@ const Projects = () => {
             {/* 탭박스3 */}
             <div></div>
           </div>
+          <ProjectRecruitment />
         </div>
       </>
     </PageLayout>
